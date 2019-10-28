@@ -42,6 +42,10 @@ public class gui2 extends javax.swing.JFrame {
         SchedulerName_JTF = new javax.swing.JTextField();
         SourcePath_JL = new javax.swing.JLabel();
         SourcePath_JTF = new javax.swing.JTextField();
+        CommitCycles_JTF = new javax.swing.JTextField();
+        CommitCycles_JL = new javax.swing.JLabel();
+        DecodeCycles_JTF = new javax.swing.JTextField();
+        DecodeCycles_JL = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -72,6 +76,24 @@ public class gui2 extends javax.swing.JFrame {
             }
         });
 
+        CommitCycles_JTF.setText(ConfigFile.getCommitCycles()+"");
+        CommitCycles_JTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CommitCycles_JTFActionPerformed(evt);
+            }
+        });
+
+        CommitCycles_JL.setText("CommitCycles");
+
+        DecodeCycles_JTF.setText(ConfigFile.getDecodeCycles()+"");
+        DecodeCycles_JTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DecodeCycles_JTFActionPerformed(evt);
+            }
+        });
+
+        DecodeCycles_JL.setText("DecodeCycles");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -79,10 +101,6 @@ public class gui2 extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(SourcePath_JL)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(SourcePath_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                             .addComponent(RandomFile_JL)
@@ -91,7 +109,20 @@ public class gui2 extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(SchedulerName_JL)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(SchedulerName_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(SchedulerName_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(SourcePath_JL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(SourcePath_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(DecodeCycles_JL)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(DecodeCycles_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(CommitCycles_JL)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(CommitCycles_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(262, 262, 262))
         );
         layout.setVerticalGroup(
@@ -109,7 +140,15 @@ public class gui2 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SourcePath_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SourcePath_JTF))
-                .addGap(225, 225, 225))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CommitCycles_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CommitCycles_JTF))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(DecodeCycles_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(DecodeCycles_JTF))
+                .addGap(173, 173, 173))
         );
 
         pack();
@@ -126,6 +165,14 @@ public class gui2 extends javax.swing.JFrame {
     private void SourcePath_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SourcePath_JTFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SourcePath_JTFActionPerformed
+
+    private void CommitCycles_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CommitCycles_JTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CommitCycles_JTFActionPerformed
+
+    private void DecodeCycles_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DecodeCycles_JTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DecodeCycles_JTFActionPerformed
 
     /**
      * @param args the command line arguments
@@ -168,6 +215,10 @@ public class gui2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel CommitCycles_JL;
+    private javax.swing.JTextField CommitCycles_JTF;
+    private javax.swing.JLabel DecodeCycles_JL;
+    private javax.swing.JTextField DecodeCycles_JTF;
     private javax.swing.JLabel RandomFile_JL;
     private javax.swing.JTextField RandomFile_JTF;
     private javax.swing.JLabel SchedulerName_JL;
