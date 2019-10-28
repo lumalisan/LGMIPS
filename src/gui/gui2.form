@@ -54,6 +54,11 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="CommitCycles_JTF" min="-2" pref="102" max="-2" attributes="0"/>
                       </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="ExecuteCycles_JL" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="ExecuteCycles_JTF" min="-2" pref="102" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="262" max="-2" attributes="0"/>
@@ -88,7 +93,12 @@
                   <Component id="DecodeCycles_JL" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                   <Component id="DecodeCycles_JTF" alignment="3" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="173" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="ExecuteCycles_JL" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                  <Component id="ExecuteCycles_JTF" alignment="3" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="147" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -167,6 +177,21 @@
     <Component class="javax.swing.JLabel" name="DecodeCycles_JL">
       <Properties>
         <Property name="text" type="java.lang.String" value="DecodeCycles"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="ExecuteCycles_JTF">
+      <Properties>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="ConfigFile.getExecuteCycles()+&quot;&quot;" type="code"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ExecuteCycles_JTFActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="ExecuteCycles_JL">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ExecuteCycles"/>
       </Properties>
     </Component>
   </SubComponents>

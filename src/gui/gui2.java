@@ -46,6 +46,8 @@ public class gui2 extends javax.swing.JFrame {
         CommitCycles_JL = new javax.swing.JLabel();
         DecodeCycles_JTF = new javax.swing.JTextField();
         DecodeCycles_JL = new javax.swing.JLabel();
+        ExecuteCycles_JTF = new javax.swing.JTextField();
+        ExecuteCycles_JL = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -94,6 +96,15 @@ public class gui2 extends javax.swing.JFrame {
 
         DecodeCycles_JL.setText("DecodeCycles");
 
+        ExecuteCycles_JTF.setText(ConfigFile.getExecuteCycles()+"");
+        ExecuteCycles_JTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExecuteCycles_JTFActionPerformed(evt);
+            }
+        });
+
+        ExecuteCycles_JL.setText("ExecuteCycles");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -122,7 +133,11 @@ public class gui2 extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(CommitCycles_JL)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(CommitCycles_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(CommitCycles_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(ExecuteCycles_JL)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(ExecuteCycles_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(262, 262, 262))
         );
         layout.setVerticalGroup(
@@ -148,7 +163,11 @@ public class gui2 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(DecodeCycles_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(DecodeCycles_JTF))
-                .addGap(173, 173, 173))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ExecuteCycles_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ExecuteCycles_JTF))
+                .addGap(147, 147, 147))
         );
 
         pack();
@@ -173,6 +192,10 @@ public class gui2 extends javax.swing.JFrame {
     private void DecodeCycles_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DecodeCycles_JTFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DecodeCycles_JTFActionPerformed
+
+    private void ExecuteCycles_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExecuteCycles_JTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ExecuteCycles_JTFActionPerformed
 
     /**
      * @param args the command line arguments
@@ -219,6 +242,8 @@ public class gui2 extends javax.swing.JFrame {
     private javax.swing.JTextField CommitCycles_JTF;
     private javax.swing.JLabel DecodeCycles_JL;
     private javax.swing.JTextField DecodeCycles_JTF;
+    private javax.swing.JLabel ExecuteCycles_JL;
+    private javax.swing.JTextField ExecuteCycles_JTF;
     private javax.swing.JLabel RandomFile_JL;
     private javax.swing.JTextField RandomFile_JTF;
     private javax.swing.JLabel SchedulerName_JL;
