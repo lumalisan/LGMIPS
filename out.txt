@@ -1,0 +1,15 @@
+================== RESULTATS ==================
+Branchs taken: 0
+Branchs totals: 0
+Percentatge de bots realitzats: 0.0%
+Cicles: 17
+Número d'instruccions: 3
+CPI: 5.666666666666667
+
+
+================ DIAGRAMA TEMPORAL ================
+
+                	1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	16	17	
+01: LW r30,age  	F	F	F	D	D	E	E	E	M	M	W							
+02: ADD r2,r3,r4		F	F	F	D	D	E	E	E	M	M	W						
+03: SB r30,gpa  			F	F	F	S	S	S	S	D	D	E	E	E	M	M	W	

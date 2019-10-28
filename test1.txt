@@ -1,0 +1,21 @@
+////////////////////////////////////////////
+/ Description:
+/    Simple example program
+/
+/ Name:
+/    Belén Bermejo
+////////////////////////////////////////////
+
+/ Main program
+/Variables for main
+
+	.data
+age_	.byte	37628 /decimal
+gpa_	.half	0xFFFFFFFB	/hex
+nl_	.byte	0%12	/octal
+bin_	.word	0b10	/binary	
+/Main body
+	.text
+LW r30,age
+ADD r2,r3,r4
+SB r30,gpa

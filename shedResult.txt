@@ -1,0 +1,7 @@
+--------SCHEDULING RESULT--------------
+LW r30,age
+
+ADD r2,r3,r4
+
+SB r30,gpa
+
