@@ -25,6 +25,7 @@ public class gui2 extends javax.swing.JFrame {
         conf = new ConfigFile("config.properties");
         conf.loadConfig();
         initComponents();
+        System.out.println("Componentes inicializados.");
     }
 
     /**
@@ -36,6 +37,7 @@ public class gui2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jComboBox1 = new javax.swing.JComboBox<>();
         RandomFile_JL = new javax.swing.JLabel();
         RandomFile_JTF = new javax.swing.JTextField();
         SchedulerName_JL = new javax.swing.JLabel();
@@ -48,6 +50,8 @@ public class gui2 extends javax.swing.JFrame {
         DecodeCycles_JL = new javax.swing.JLabel();
         ExecuteCycles_JTF = new javax.swing.JTextField();
         ExecuteCycles_JL = new javax.swing.JLabel();
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -208,7 +212,7 @@ public class gui2 extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("System".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -230,6 +234,7 @@ public class gui2 extends javax.swing.JFrame {
             public void run() {
                 try {
                     new gui2().setVisible(true);
+                    System.out.println("Enseñando ventana");
                 } catch (IOException ex) {
                     Logger.getLogger(gui2.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -250,5 +255,6 @@ public class gui2 extends javax.swing.JFrame {
     private javax.swing.JTextField SchedulerName_JTF;
     private javax.swing.JLabel SourcePath_JL;
     private javax.swing.JTextField SourcePath_JTF;
+    private javax.swing.JComboBox<String> jComboBox1;
     // End of variables declaration//GEN-END:variables
 }
