@@ -56,6 +56,7 @@ public class Pipeline implements MIPS {
     private static final predictionType tipusPrediccio = ConfigFile.getTipusPrediccio(); 
     private static final boolean addressPredictor = ConfigFile.isAddressPredictor(); 
     private static final boolean forwarding = ConfigFile.hasForwarding();
+    private static final boolean loopUnrolling = ConfigFile.isLoopUnrolling();
     
     public Instruction source(Instruction i) {
         return listOfInstructions.get(i.getIDIns() - 1);

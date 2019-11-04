@@ -47,6 +47,7 @@ public final class Architecture implements MIPS {
     }
 
     /*Method that simulate MIPS execution*/
+    @SuppressWarnings("unchecked")
     public void simulateMIPS() {
         try {
             /*Detect syntax mistakes*/

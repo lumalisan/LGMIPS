@@ -54,6 +54,8 @@ public class ConfigFile {
     private static Pipeline.predictionType tipusPrediccio;
     private static boolean addressPredictor;
     private static boolean forwarding;
+    
+    private static boolean loopUnrolling;
 
     public ConfigFile(String path) {
         try {
@@ -110,6 +112,15 @@ public class ConfigFile {
             System.out.println("**Error leyendo preferencia de forwarding, estableciendo valor por defecto ACTIVO**");
             forwarding = true;
         }
+        
+        try {
+            loopUnrolling = normalizeKey(prop.getProperty("loopUnrolling(y/n)")).equals("y");
+        } catch (Exception e) {
+            System.out.println("**Error leyendo preferencia de loop unrolling, estableciendo valor por defecto INACTIVO**");
+            loopUnrolling = false;
+        }
+        
+
     }
 
     public static void showConfig() {
@@ -144,6 +155,7 @@ public class ConfigFile {
 
         System.out.println("Address predict.   : " + addressPredictor);
         System.out.println("Forwarding         : " + forwarding);
+        System.out.println("Loop Unrolling     : " + loopUnrolling);
         System.out.println("============ FIN PREFERENCIAS ============\n");
     }
 
@@ -242,6 +254,14 @@ public class ConfigFile {
 
     public static int getnFUAdd() {
         return nFUAdd;
+    }
+
+    public static boolean isLoopUnrolling() {
+        return loopUnrolling;
+    }
+
+    public static void setLoopUnrolling(boolean loopUnrolling) {
+        ConfigFile.loopUnrolling = loopUnrolling;
     }
 
     public static int getnFUMult() {

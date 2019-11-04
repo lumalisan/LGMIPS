@@ -69,12 +69,14 @@ public class SourceFile {
             if (points != -1) {                
                 String label = list.get(i).substring(0, points);
                 Architecture.addBrachPoint(label, nLine);
-               // System.out.println("LABEL + "+label +" i "+nLine);
-                nLine++;
+                System.out.println("LABEL + "+label +" i "+nLine);
             }
+            //Bug que no dejaba ejecutar un programa con dos Labels arreglado
+            nLine++;
         }
     }
 
+    // Check correct syntax and create arrayList of instructions
     private void chechSyntaxCode() {
         for (int i = 0; i < linesFileList.size(); i++) {
             String line = linesFileList.get(i);
