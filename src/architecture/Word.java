@@ -1,9 +1,6 @@
 //TFG 2013-2014
 package architecture;
 
-import java.util.Arrays;
-import javax.swing.JOptionPane;
-
 /**
  *
  * @author Belen Bermejo Gonzalez

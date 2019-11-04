@@ -53,10 +53,10 @@ public class Pipeline implements MIPS {
     private boolean branchFailed = false;
     
     // Añadido
-    private static final predictionType tipusPrediccio = ConfigFile.getTipusPrediccio(); 
-    private static final boolean addressPredictor = ConfigFile.isAddressPredictor(); 
-    private static final boolean forwarding = ConfigFile.hasForwarding();
-    private static final boolean loopUnrolling = ConfigFile.isLoopUnrolling();
+    private static final predictionType TIPUSPREDICCIO = ConfigFile.getTipusPrediccio(); 
+    private static final boolean ADDRESSPREDICTOR = ConfigFile.isAddressPredictor(); 
+    private static final boolean FORWARDING = ConfigFile.hasForwarding();
+    private static final boolean LOOPUNROLLING = ConfigFile.isLoopUnrolling();
     
     public Instruction source(Instruction i) {
         return listOfInstructions.get(i.getIDIns() - 1);
@@ -178,14 +178,14 @@ public class Pipeline implements MIPS {
                         bufferFD.clear();
                     } // Si el tipo de predicción es taken
                     else if (predictTaken()) {
-                        // Si hay salto y ha acertado con la prediccion de la dirección (Con addressPredictor activado)
-                        if (BranchManager.isDoBranch() && addressPredictor && BranchManager.getPredictedAddress() == BranchManager.getPC()) {
+                        // Si hay salto y ha acertado con la prediccion de la dirección (Con ADDRESSPREDICTOR activado)
+                        if (BranchManager.isDoBranch() && ADDRESSPREDICTOR && BranchManager.getPredictedAddress() == BranchManager.getPC()) {
                             // No hay stall
                             penalitzacioBot = false;
                             // Cogemos la dirección de salto
                             pc = BranchManager.getPC()-1;
                         } // Si hay salto y no ha acertado con la prediccion (necesita calcular la dirección de salto)
-                        else if (BranchManager.isDoBranch() && (!addressPredictor || BranchManager.getPredictedAddress() != BranchManager.getPC())){
+                        else if (BranchManager.isDoBranch() && (!ADDRESSPREDICTOR || BranchManager.getPredictedAddress() != BranchManager.getPC())){
                             // Cogemos la dirección de salto
                             pc = BranchManager.getPC()-1;
                             //Stall
@@ -252,8 +252,8 @@ public class Pipeline implements MIPS {
                 bufferEM.add(inst);
                 
                 //Añadido
-                // Si hay forwarding activado y la instrucción es de tipo ALU
-                if (forwarding && inst.isIsALU()) {
+                // Si hay FORWARDING activado y la instrucción es de tipo ALU
+                if (FORWARDING && inst.isIsALU()) {
                     // Senyalitzar instruccions que esperaven per dependència
                     ArrayList<Integer> senyals = source(inst).getSignal();
                     for (Integer id : senyals) {
@@ -291,8 +291,8 @@ public class Pipeline implements MIPS {
                 bufferMW.add(inst);
                 
                 //Añadido
-                // Si hay forwarding activado y la instrucción es de tipo LW
-                if (forwarding && inst.isIsLW()) {
+                // Si hay FORWARDING activado y la instrucción es de tipo LW
+                if (FORWARDING && inst.isIsLW()) {
                     // Senyalitzar instruccions que esperaven per dependència
                     ArrayList<Integer> senyals = source(inst).getSignal();
                     for (Integer id : senyals) {
@@ -330,8 +330,8 @@ public class Pipeline implements MIPS {
                 i--;
                 
                 // Cambiado
-                // Si hay forwarding activado y la instrucción es de tipo LW
-                if (!forwarding || (forwarding && !inst.isIsALU() && !inst.isIsLW())) {
+                // Si hay FORWARDING activado y la instrucción es de tipo LW
+                if (!FORWARDING || (FORWARDING && !inst.isIsALU() && !inst.isIsLW())) {
                     // Senyalitzar instruccions que esperaven per dependència
                     ArrayList<Integer> senyals = source(inst).getSignal();
                     for (Integer id : senyals) {
@@ -360,14 +360,14 @@ public class Pipeline implements MIPS {
     // Añadido
     // Método que devuelve true si el tipo de predicción es taken
     private boolean predictTaken() { 
-        return tipusPrediccio == predictionType.TAKEN || 
-                (tipusPrediccio == predictionType.ONEBIT && BranchManager.getOnebitPredictor() == 1) ||
-                (tipusPrediccio == predictionType.TWOBIT && BranchManager.getTwobitPredictor() > 1);
+        return TIPUSPREDICCIO == predictionType.TAKEN || 
+                (TIPUSPREDICCIO == predictionType.ONEBIT && BranchManager.getOnebitPredictor() == 1) ||
+                (TIPUSPREDICCIO == predictionType.TWOBIT && BranchManager.getTwobitPredictor() > 1);
     }
 
     // Añadido
-    public static predictionType getTipusPrediccio() {
-        return tipusPrediccio;
+    public static predictionType getTIPUSPREDICCIO() {
+        return TIPUSPREDICCIO;
     }
     
 }

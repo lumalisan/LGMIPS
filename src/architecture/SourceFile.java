@@ -41,7 +41,7 @@ public class SourceFile {
     }
 
     public int countLines() throws IOException {
-        String linia = "";
+        String linia;
         int nLines = 0;
         while ((linia = br.readLine()) != null) {
             nLines++;
@@ -52,12 +52,12 @@ public class SourceFile {
     //Search brach points in source code
     private void searchBranchPoints() {
         int start = 0;
-        int nLine=0;
+        int nLineLocal = 0;
         for (int i = 0; i < linesFileList.size(); i++) {
             String s = linesFileList.get(i).trim();
             if (s.equals(".text")) {
                 start = i + 1;    
-                nLine++;
+                nLineLocal++;
             }
         }
         ArrayList<String> list = new ArrayList<>();
@@ -68,11 +68,11 @@ public class SourceFile {
             int points = list.get(i).indexOf(":");
             if (points != -1) {                
                 String label = list.get(i).substring(0, points);
-                Architecture.addBrachPoint(label, nLine);
-                System.out.println("LABEL + "+label +" i "+nLine);
+                Architecture.addBrachPoint(label, nLineLocal);
+                //System.out.println("LABEL + "+label +" i "+nLine);
             }
             //Bug que no dejaba ejecutar un programa con dos Labels arreglado
-            nLine++;
+            nLineLocal++;
         }
     }
 
@@ -80,7 +80,7 @@ public class SourceFile {
     private void chechSyntaxCode() {
         for (int i = 0; i < linesFileList.size(); i++) {
             String line = linesFileList.get(i);
-            String lineAux = "";
+            String lineAux;
             int posSpace;
             String opcode = "";
             String operands = "";
@@ -154,7 +154,7 @@ public class SourceFile {
     }
 
     private void readFile() throws IOException {
-        String readLine = "";
+        String readLine;
         while ((readLine = br.readLine()) != null) {
             linesFileList.add(readLine);
         }

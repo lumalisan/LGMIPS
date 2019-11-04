@@ -6,8 +6,6 @@
 
 package architecture;
 
-import architecture.Instruction;
-
 public class InstructionCopier {
     public static Instruction copy(Instruction i0) {
         Instruction i = new Instruction(i0.getOpcode(), i0.getOperands(), i0.getIDIns());

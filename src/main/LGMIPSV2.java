@@ -5,7 +5,6 @@ package main;
 import files.ConfigFile;
 import architecture.Architecture;
 import gui.*;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
@@ -28,7 +27,7 @@ public class LGMIPSV2 {
         
         ConfigFile conf = new ConfigFile(configPath);
         conf.loadConfig();
-        conf.showConfig();
+        ConfigFile.showConfig();
         String option = ConfigFile.getRandomFile();
         switch (option) {
             case "y":               
@@ -42,6 +41,5 @@ public class LGMIPSV2 {
         }
         Architecture a = new Architecture(ConfigFile.getnBits(), path);
         a.simulateMIPS();
-        System.out.println(Architecture.getBranchPoints().toString());
     }
 }

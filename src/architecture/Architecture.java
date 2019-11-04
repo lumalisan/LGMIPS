@@ -25,7 +25,7 @@ public final class Architecture implements MIPS {
     //Architecture structure data
     private static ArrayList<Instruction> listOfIntructions = new ArrayList<>();
     public static HashMap<String, Integer> registers = new HashMap<>();
-    private static final HashMap<String, Integer> branchPoints = new HashMap<>();
+    private static final HashMap<String, Integer> BRANCHPOINTS = new HashMap<>();
    // public static final ROB rob = new ROB(ConfigFile.getROB());
     public static Memory mem;
 
@@ -33,9 +33,9 @@ public final class Architecture implements MIPS {
     /*Constructing the architecture*/
     public Architecture(int numberOfBits, String srcPath) throws FileNotFoundException, IOException {
         if (numberOfBits == 32) {
-            Architecture.numberOfBits = numberBits.x32;
+            Architecture.numberOfBits = numberBits.X32;
         } else if (numberOfBits == 64) {
-            Architecture.numberOfBits = numberBits.x64;
+            Architecture.numberOfBits = numberBits.X64;
         }
 
         if (srcPath != null) {
@@ -79,7 +79,7 @@ public final class Architecture implements MIPS {
 
                 // Memory.clearMemory();
             } else {
-                int totalErrors = f.getErrors() + Instruction.getError() + Word.getErrorWord();
+                int totalErrors = SourceFile.getErrors() + Instruction.getError() + Word.getErrorWord();
                 System.out.println("The source code has " + totalErrors + " errors.");
             }
             f.closeFile();
@@ -92,12 +92,12 @@ public final class Architecture implements MIPS {
 
     /*Method that check if a brach point was declarated before in the source code*/
     public static boolean checkBrachPoint(String brachPoint) {
-        return branchPoints.containsKey(brachPoint);
+        return BRANCHPOINTS.containsKey(brachPoint);
     }
 
     /*Method that add the branch points to its structure*/
     public static void addBrachPoint(String label, int idIns) {
-        branchPoints.put(label, idIns);
+        BRANCHPOINTS.put(label, idIns);
     }
 
     /*Method that create the main memory*/
@@ -108,15 +108,15 @@ public final class Architecture implements MIPS {
     /*Method that create general-porpose registers*/
     public void createRegisters() throws IOException {
         ConfigRegisters cr = new ConfigRegisters();
-        if (ConfigRegisters.getnRegister() != numberOfRegistersGP) {
+        if (ConfigRegisters.getnRegister() != NUMBEROFREGISTERSGP) {
             System.out.println("Number of registers are incorrect. Please check config file.");
         } else {
             cr.loadConfig();
-            ArrayList<Integer> reg = new ArrayList<>();
+            ArrayList<Integer> reg;
             reg = cr.getConfigReg();
             String name;
             int value;
-            for (int i = 0; i < numberOfRegistersGP; i++) {
+            for (int i = 0; i < NUMBEROFREGISTERSGP; i++) {
                 name = "r" + i;
                 value = reg.get(i);
                 registers.put(name, value);
@@ -140,7 +140,7 @@ public final class Architecture implements MIPS {
         return registers;
     }
 
-    public static HashMap<String, Integer> getBranchPoints() {
-        return branchPoints;
+    public static HashMap<String, Integer> getBRANCHPOINTS() {
+        return BRANCHPOINTS;
     }
 }

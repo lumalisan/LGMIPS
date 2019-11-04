@@ -5,9 +5,6 @@
  */
 package architecture;
 
-import architecture.Instruction;
-import architecture.Operations;
-
 public class FunctionalUnit {
     
     public static void execute(Instruction inst) {

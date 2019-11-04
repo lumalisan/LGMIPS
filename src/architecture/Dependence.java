@@ -29,8 +29,8 @@ public class Dependence {
         createFile();
         Instruction Imaster;
         Instruction Islave;
-        Collection<String> readSlave = new ArrayList();
-        Collection<String> writeSlave = new ArrayList();
+        Collection<String> readSlave;
+        Collection<String> writeSlave;
         for (int i = 0; i < listIns.size(); i++) {
             Imaster = listIns.get(i);
             for (int j = i + 1; j < listIns.size(); j++) {
@@ -83,7 +83,7 @@ public class Dependence {
     public static void writeFile(String msg) {
         try {
             out.write(msg);
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.err.println("Error: " + e.getMessage());
         }
     }

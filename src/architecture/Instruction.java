@@ -22,15 +22,15 @@ public class Instruction implements MIPS {
     private boolean isJump = false;
     HashMap<String, Integer> registers = Architecture.getRegisters();
 
-    private ArrayList<Dependence> listDependences = new ArrayList();
-    private static final Collection<String> load = new ArrayList();
-    private static final Collection<String> store = new ArrayList();
-    private static final Collection<String> aluIm = new ArrayList();
-    private static final Collection<String> alu = new ArrayList();
-    private static final Collection<String> shift = new ArrayList();
-    private static final Collection<String> mulDiv = new ArrayList();
-    private static final Collection<String> jump = new ArrayList();
-    private final ArrayList<Integer> signal = new ArrayList(); //a quien hay qye evisar
+    private ArrayList<Dependence> listDependences = new ArrayList<>();
+    private static final Collection<String> LOAD = new ArrayList<>();
+    private static final Collection<String> STORE = new ArrayList<>();
+    private static final Collection<String> ALULM = new ArrayList<>();
+    private static final Collection<String> ALU = new ArrayList<>();
+    private static final Collection<String> SHIFT = new ArrayList<>();
+    private static final Collection<String> MULDIV = new ArrayList<>();
+    private static final Collection<String> JUMP = new ArrayList<>();
+    private final ArrayList<Integer> signal = new ArrayList<>();
 
     /*To execute pipeline -> finish cycle of each stage*/
     private int fetch;
@@ -40,7 +40,7 @@ public class Instruction implements MIPS {
     private int wr;
     private int commit;
     // Añadido
-    private final ArrayList<Integer> stalls = new ArrayList();
+    private final ArrayList<Integer> stalls = new ArrayList<>();
 
     /*Cycle start of each stagr*/
     private int Sfetch;
@@ -61,8 +61,8 @@ public class Instruction implements MIPS {
     private boolean isLW;
 
     /*To decode*/
-    private final Collection<String> read = new ArrayList();
-    private final Collection<String> write = new ArrayList();
+    private final Collection<String> read = new ArrayList<>();
+    private final Collection<String> write = new ArrayList<>();
 
     private boolean isSource = false; //the instruction is a master of dependence
     private boolean stop; //the instruction must to be stoped
@@ -131,44 +131,44 @@ public class Instruction implements MIPS {
     }
 
     public static void createInsSet() {
-        load.addAll(Arrays.asList("LB", "LBU", "LH", "LHU", "LW", "LWL", "LWR"));
-        store.addAll(Arrays.asList("SB", "SH", "SW", "SWL", "SWR"));
-        aluIm.addAll(Arrays.asList("ADDI", "ADDIU", "SLTI", "SLTIU", "ANDI", "ORI", "XORI", "LUI"));
-        alu.addAll(Arrays.asList("ADD", "ADDU", "SUB", "SUBU", "SLT", "SLTU", "AND", "OR", "XOR", "NOR"));
-        shift.addAll(Arrays.asList("SLL", "SRL", "SRA", "SLLV", "SRLV", "SRAV"));
-        mulDiv.addAll(Arrays.asList("MULT", "MULTU", "DIV", "DIVU", "MFHI", "MTHI", "MFLO", "MTLO"));
-        jump.addAll(Arrays.asList("J", "JAL", "JR", "JALR", "JALR", "BEQ", "BNE", "BLEZ", "BGTZ", "BLTZ", "BGEZ",
+        LOAD.addAll(Arrays.asList("LB", "LBU", "LH", "LHU", "LW", "LWL", "LWR"));
+        STORE.addAll(Arrays.asList("SB", "SH", "SW", "SWL", "SWR"));
+        ALULM.addAll(Arrays.asList("ADDI", "ADDIU", "SLTI", "SLTIU", "ANDI", "ORI", "XORI", "LUI"));
+        ALU.addAll(Arrays.asList("ADD", "ADDU", "SUB", "SUBU", "SLT", "SLTU", "AND", "OR", "XOR", "NOR"));
+        SHIFT.addAll(Arrays.asList("SLL", "SRL", "SRA", "SLLV", "SRLV", "SRAV"));
+        MULDIV.addAll(Arrays.asList("MULT", "MULTU", "DIV", "DIVU", "MFHI", "MTHI", "MFLO", "MTLO"));
+        JUMP.addAll(Arrays.asList("J", "JAL", "JR", "JALR", "JALR", "BEQ", "BNE", "BLEZ", "BGTZ", "BLTZ", "BGEZ",
                 "BLTZAL", "BGEZAL"));
     }
 
     /*Function that divide operands in read or write depending on the opcode
      we have, taking in account the format instruction*/
     public void decodeInstruction() {
-        if (load.contains(this.opcode)) {
-            /*load rt, offset(base)*/
+        if (LOAD.contains(this.opcode)) {
+            /*LOAD rt, offset(base)*/
             read.add(operandsList[1]);
             write.add(operandsList[0]);
           
-        } else if (store.contains(this.opcode)) {
+        } else if (STORE.contains(this.opcode)) {
             read.add(operandsList[0]);
             write.add(operandsList[1]);
           
-        } else if (aluIm.contains(this.opcode)) {
+        } else if (ALULM.contains(this.opcode)) {
             write.add(operandsList[0]);
             read.add(operandsList[1]);
             read.add(operandsList[2]);
           
-        } else if (alu.contains(this.opcode)) {
+        } else if (ALU.contains(this.opcode)) {
             write.add(operandsList[0]);
             read.add(operandsList[1]);
             read.add(operandsList[2]);
            
-        } else if (shift.contains(this.opcode)) {
+        } else if (SHIFT.contains(this.opcode)) {
             write.add(operandsList[0]);
             read.add(operandsList[1]);
             read.add(operandsList[2]);
            
-        } else if (mulDiv.contains(this.opcode)) {
+        } else if (MULDIV.contains(this.opcode)) {
             if (this.opcode.equals("MFHI") || this.opcode.equals("MFLO") || this.opcode.equals("MTHI")
                     || this.opcode.equals("MTLO")) { //only move to Rd
                 write.add(operandsList[0]);
@@ -177,16 +177,23 @@ public class Instruction implements MIPS {
                 read.add(operandsList[1]);
             }
             
-        } else if (jump.contains(this.opcode)) {
-            if (this.opcode.equals("J") || this.opcode.equals("JAL") || this.opcode.equals("JR")) {
-                read.add(operandsList[0]);
-            } else if (this.opcode.equals("BEQ") || this.opcode.equals("BNE")) {
-                read.add(operandsList[0]);
-                read.add(operandsList[1]);
-                read.add(operandsList[2]);
-            } else {
-                read.add(operandsList[0]);
-                read.add(operandsList[1]);
+        } else if (JUMP.contains(this.opcode)) {
+            switch (this.opcode) {
+                case "J":
+                case "JAL":
+                case "JR":
+                    read.add(operandsList[0]);
+                    break;
+                case "BEQ":
+                case "BNE":
+                    read.add(operandsList[0]);
+                    read.add(operandsList[1]);
+                    read.add(operandsList[2]);
+                    break;
+                default:
+                    read.add(operandsList[0]);
+                    read.add(operandsList[1]);
+                    break;
             }
             
         }
@@ -194,20 +201,20 @@ public class Instruction implements MIPS {
 
     public boolean checkOpcode() {
         boolean opcodeOK = false;
-        if (load.contains(this.opcode) || store.contains(this.opcode) || aluIm.contains(this.opcode)
-                || alu.contains(this.opcode) || shift.contains(this.opcode) || mulDiv.contains(this.opcode)
-                || jump.contains(this.opcode)) {
-            if (jump.contains(this.opcode)) {
+        if (LOAD.contains(this.opcode) || STORE.contains(this.opcode) || ALULM.contains(this.opcode)
+                || ALU.contains(this.opcode) || SHIFT.contains(this.opcode) || MULDIV.contains(this.opcode)
+                || JUMP.contains(this.opcode)) {
+            if (JUMP.contains(this.opcode)) {
                 isJump = true;
             }
             // Añadido
             // Instrucción tipo ALU
-            if (alu.contains(this.opcode) || aluIm.contains(this.opcode) || shift.contains(this.opcode) || mulDiv.contains(this.opcode)) {
+            if (ALU.contains(this.opcode) || ALULM.contains(this.opcode) || SHIFT.contains(this.opcode) || MULDIV.contains(this.opcode)) {
                 isALU = true;
             }
             // Añadido
             // Instrucción tipo LW
-            if (load.contains(this.opcode) || store.contains(this.opcode)) {
+            if (LOAD.contains(this.opcode) || STORE.contains(this.opcode)) {
                 isLW = true;
             }
             opcodeOK = true;
@@ -222,27 +229,27 @@ public class Instruction implements MIPS {
     public boolean checkOperand() {
         boolean operandOK = false;
         operandsList = this.operands.split(",");
-        for (int i = 0; i < operandsList.length; i++) {
-            String ID = (String) operandsList[i].subSequence(0, 1);
+        for (String operandsList1 : operandsList) {
+            String ID = (String) operandsList1.subSequence(0, 1);
             if (ID.equals("r")) {
-                if (registers.containsKey(operandsList[i])) {
+                if (registers.containsKey(operandsList1)) {
                     operandOK = true;
                 } else {
                     error++;
-                    System.out.println("Instruction " + SourceFile.getIdIns() + " operand error " + operandsList[i]);
+                    System.out.println("Instruction " + SourceFile.getIdIns() + " operand error " + operandsList1);
                 }
-            } else if (isNumber(operandsList[i])) {
+            } else if (isNumber(operandsList1)) {
                 operandOK = true;
             } else {
                 if (isJump) {
-                    if (Architecture.checkBrachPoint(operandsList[i])) {
+                    if (Architecture.checkBrachPoint(operandsList1)) {
                         operandOK = true;
                     } else {
                         error++;
                         operandOK = false;
                     }
                 } else {
-                    if (Memory.correctPos(operandsList[i])) {
+                    if (Memory.correctPos(operandsList1)) {
                         operandOK = true;
                     } else {
                         error++;

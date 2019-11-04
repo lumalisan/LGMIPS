@@ -1,7 +1,6 @@
 //TFG 2013-2014
 package architecture;
 
-import java.util.Arrays;
 import java.util.HashMap;
 
 /**

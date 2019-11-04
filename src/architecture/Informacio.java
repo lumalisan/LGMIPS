@@ -5,7 +5,6 @@
  */
 package architecture;
 
-import architecture.Instruction;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -108,48 +107,45 @@ public class Informacio {
             }
         }
         
-        BufferedWriter bw = new BufferedWriter(new FileWriter(new File("out.txt")));
-        
-        bw.append("================== RESULTATS ==================");
-        bw.append("\r\n");
-        bw.append("Branchs taken: "+nBranchsTaken+"\r\n");
-        bw.append("Branchs totals: "+nBranchs+"\r\n");
-        bw.append("Percentatge de bots realitzats: "+botsRealitzats+"%\r\n"); // Añadido "%"
-        bw.append("Cicles: "+cicle+"\r\n");
-        bw.append("Número d'instruccions: "+timeline.size()+"\r\n");
-        bw.append("CPI: "+CPI+"\r\n");
-        bw.append("\r\n");
-        bw.append("\r\n");
-        
-        bw.append("================ DIAGRAMA TEMPORAL ================");
-        bw.append("\r\n");
-        bw.append("\r\n");
-
-        System.out.print("================== RESULTATS ==================");
-        System.out.print("\r\n");
-        System.out.print("Branchs taken: "+nBranchsTaken+"\r\n");
-        System.out.print("Branchs totals: "+nBranchs+"\r\n");
-        System.out.print("Percentatge de bots realitzats: "+botsRealitzats+"%\r\n");
-        System.out.print("Cicles: "+cicle+"\r\n");
-        System.out.print("Número d'instruccions: "+timeline.size()+"\r\n");
-        System.out.print("CPI: "+CPI+"\r\n");
-        System.out.print("\r\n");
-        System.out.print("\r\n");
-        
-        System.out.print("================ DIAGRAMA TEMPORAL ================");
-        System.out.print("\r\n");
-        System.out.print("\r\n");
-        
-        for (int fila = 0; fila < resultat.length; fila++) {
-            for (int columna = 0; columna < resultat[fila].length; columna++) {
-                String v = resultat[fila][columna];
-                bw.append(v == null ? "\t" : v);
-                System.out.print(v == null ? "\t" : v);
-            }
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(new File("out.txt")))) {
+            bw.append("================== RESULTATS ==================");
             bw.append("\r\n");
+            bw.append("Branchs taken: "+nBranchsTaken+"\r\n");
+            bw.append("Branchs totals: "+nBranchs+"\r\n");
+            bw.append("Percentatge de bots realitzats: "+botsRealitzats+"%\r\n"); // Añadido "%"
+            bw.append("Cicles: "+cicle+"\r\n");
+            bw.append("Número d'instruccions: "+timeline.size()+"\r\n");
+            bw.append("CPI: "+CPI+"\r\n");
+            bw.append("\r\n");
+            bw.append("\r\n");
+            
+            bw.append("================ DIAGRAMA TEMPORAL ================");
+            bw.append("\r\n");
+            bw.append("\r\n");
+            
+            System.out.print("================== RESULTATS ==================");
             System.out.print("\r\n");
+            System.out.print("Branchs taken: "+nBranchsTaken+"\r\n");
+            System.out.print("Branchs totals: "+nBranchs+"\r\n");
+            System.out.print("Percentatge de bots realitzats: "+botsRealitzats+"%\r\n");
+            System.out.print("Cicles: "+cicle+"\r\n");
+            System.out.print("Número d'instruccions: "+timeline.size()+"\r\n");
+            System.out.print("CPI: "+CPI+"\r\n");
+            System.out.print("\r\n");
+            System.out.print("\r\n");
+            
+            System.out.print("================ DIAGRAMA TEMPORAL ================");
+            System.out.print("\r\n");
+            System.out.print("\r\n");
+            
+            for (String[] resultat1 : resultat) {
+                for (String v : resultat1) {
+                    bw.append(v == null ? "\t" : v);
+                    System.out.print(v == null ? "\t" : v);
+                }
+                bw.append("\r\n");
+                System.out.print("\r\n");
+            }
         }
-        
-        bw.close();
     }
 }

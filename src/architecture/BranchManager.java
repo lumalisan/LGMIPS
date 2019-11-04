@@ -1,7 +1,5 @@
 package architecture;
 
-import architecture.*;
-
 public class BranchManager {
 
     private static int PC = -1;
@@ -28,9 +26,9 @@ public class BranchManager {
         nBranch++;
         
         // Añadido
-        if (Pipeline.getTipusPrediccio() == Pipeline.predictionType.ONEBIT) {
+        if (Pipeline.getTIPUSPREDICCIO() == Pipeline.predictionType.ONEBIT) {
             modifyOneBitPredictor();
-        } else if (Pipeline.getTipusPrediccio() == Pipeline.predictionType.TWOBIT){
+        } else if (Pipeline.getTIPUSPREDICCIO() == Pipeline.predictionType.TWOBIT){
             modifyTwoBitPredictor();
         }
         
@@ -105,8 +103,8 @@ public class BranchManager {
         // Cambiado (Etiquetas)
         try {
             PC = Integer.parseInt(op[operandPosition]); // Si op[] es un número (la linea a la que saltar)
-        } catch (Exception e) {
-            PC = Architecture.getBranchPoints().get(op[operandPosition]); // Si es una etiqueta
+        } catch (NumberFormatException e) {
+            PC = Architecture.getBRANCHPOINTS().get(op[operandPosition]); // Si es una etiqueta
             // usa op[] de "key" y devuelve el número (la linea a la que saltar)
         }
 

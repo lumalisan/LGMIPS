@@ -14,8 +14,8 @@ public interface MIPS {
 
     public class numberBits {
 
-        public static final int x32 = 32;
-        public static final int x64 = 64;
+        public static final int X32 = 32;
+        public static final int X64 = 64;
     }
 
     public enum typeFU {
@@ -27,6 +27,6 @@ public interface MIPS {
 
         THROW, EXECUTING, FINISH
     }
-    public static int numberOfRegistersGP = ConfigFile.getnRegister(); 
+    public static int NUMBEROFREGISTERSGP = ConfigFile.getnRegister(); 
    
 }

@@ -6,8 +6,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -42,7 +40,7 @@ public class Scheduler {
     }
 
     private void printSch(ArrayList<Instruction> schList) throws IOException {
-        String out = "";
+        String out;
         FileWriter fw = new FileWriter(fileSch.getAbsoluteFile());
         try (BufferedWriter bw = new BufferedWriter(fw)) {
             out="--------SCHEDULING RESULT--------------\r\n";
