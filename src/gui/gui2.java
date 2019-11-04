@@ -38,6 +38,8 @@ public class gui2 extends javax.swing.JFrame {
     private void initComponents() {
 
         jComboBox1 = new javax.swing.JComboBox<>();
+        SchedulerName_JL3 = new javax.swing.JLabel();
+        SchedulerName_JTF3 = new javax.swing.JTextField();
         RandomFile_JL = new javax.swing.JLabel();
         RandomFile_JTF = new javax.swing.JTextField();
         SchedulerName_JL = new javax.swing.JLabel();
@@ -50,12 +52,61 @@ public class gui2 extends javax.swing.JFrame {
         DecodeCycles_JL = new javax.swing.JLabel();
         ExecuteCycles_JTF = new javax.swing.JTextField();
         ExecuteCycles_JL = new javax.swing.JLabel();
+        nBitsArchitecture_JL = new javax.swing.JLabel();
+        nBitsArchitecture_JTF = new javax.swing.JTextField();
+        startAddress_JL = new javax.swing.JLabel();
+        startAddress_JTF = new javax.swing.JTextField();
+        finishAddress_JL = new javax.swing.JLabel();
+        finishAddress_JTF = new javax.swing.JTextField();
+        nRegisters_JL = new javax.swing.JLabel();
+        nRegisters_JTF = new javax.swing.JTextField();
+        fetchCycles_JL = new javax.swing.JLabel();
+        fetchCycles_JTF = new javax.swing.JTextField();
+        memoryCycles_JL = new javax.swing.JLabel();
+        memoryCycles_JTF2 = new javax.swing.JTextField();
+        writeCycles_JL = new javax.swing.JLabel();
+        writeCycles_JTF3 = new javax.swing.JTextField();
+        scalable_JL = new javax.swing.JLabel();
+        scalable_JTF = new javax.swing.JTextField();
+        nFUGeneric_JL = new javax.swing.JLabel();
+        nFUGeneric_JTF = new javax.swing.JTextField();
+        latencyGeneric_JL = new javax.swing.JLabel();
+        LatencyGeneric_JTF = new javax.swing.JTextField();
+        nFUAdd_JL = new javax.swing.JLabel();
+        nFUAdd_JTF = new javax.swing.JTextField();
+        latencyAdd_JL = new javax.swing.JLabel();
+        latencyAdd_JTF = new javax.swing.JTextField();
+        nFUMult_JL = new javax.swing.JLabel();
+        nFUMult_JTF = new javax.swing.JTextField();
+        latencyFUMult_JL = new javax.swing.JLabel();
+        latencyFUMult_JTF = new javax.swing.JTextField();
+        sizeROB_JL = new javax.swing.JLabel();
+        sizeROB_JTF = new javax.swing.JTextField();
+        retirementROB_JL = new javax.swing.JLabel();
+        retirementROB_JTF = new javax.swing.JTextField();
+        ROB_JL = new javax.swing.JLabel();
+        ROB_JTF = new javax.swing.JTextField();
+        tipusPrediccio_JL = new javax.swing.JLabel();
+        tipusPrediccio_JTF = new javax.swing.JTextField();
+        addressPredictor_JL = new javax.swing.JLabel();
+        addressPredictor_JTF = new javax.swing.JTextField();
+        forwarding_JL = new javax.swing.JLabel();
+        SchedulerName_JTF16 = new javax.swing.JTextField();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        SchedulerName_JL3.setText("startAdress");
+
+        SchedulerName_JTF3.setText(ConfigFile.getSchedulerName());
+        SchedulerName_JTF3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SchedulerName_JTF3ActionPerformed(evt);
+            }
+        });
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        RandomFile_JL.setText("RandomFile");
+        RandomFile_JL.setText("RandomFile(y/n)");
 
         RandomFile_JTF.setText(ConfigFile.getRandomFile());
         RandomFile_JTF.addActionListener(new java.awt.event.ActionListener() {
@@ -66,7 +117,7 @@ public class gui2 extends javax.swing.JFrame {
 
         SchedulerName_JL.setText("SchedulerName");
 
-        SchedulerName_JTF.setText(ConfigFile.getSchedulerName());
+        SchedulerName_JTF.setText(ConfigFile.getSchedulerName()+"");
         SchedulerName_JTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SchedulerName_JTFActionPerformed(evt);
@@ -98,7 +149,7 @@ public class gui2 extends javax.swing.JFrame {
             }
         });
 
-        DecodeCycles_JL.setText("DecodeCycles");
+        DecodeCycles_JL.setText("decodeCycles");
 
         ExecuteCycles_JTF.setText(ConfigFile.getExecuteCycles()+"");
         ExecuteCycles_JTF.addActionListener(new java.awt.event.ActionListener() {
@@ -107,71 +158,414 @@ public class gui2 extends javax.swing.JFrame {
             }
         });
 
-        ExecuteCycles_JL.setText("ExecuteCycles");
+        ExecuteCycles_JL.setText("executeCycles");
+
+        nBitsArchitecture_JL.setText("nBits Architecture");
+
+        nBitsArchitecture_JTF.setText(ConfigFile.getnBits()+"");
+        nBitsArchitecture_JTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nBitsArchitecture_JTFActionPerformed(evt);
+            }
+        });
+
+        startAddress_JL.setText("startAddress");
+
+        startAddress_JTF.setText(ConfigFile.getStartAdress()+"");
+        startAddress_JTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                startAddress_JTFActionPerformed(evt);
+            }
+        });
+
+        finishAddress_JL.setText("finishAddress");
+
+        finishAddress_JTF.setText(ConfigFile.getFinishAdress()+"");
+        finishAddress_JTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                finishAddress_JTFActionPerformed(evt);
+            }
+        });
+
+        nRegisters_JL.setText("nRegisters");
+
+        nRegisters_JTF.setText(ConfigFile.getnRegister()+"");
+        nRegisters_JTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nRegisters_JTFActionPerformed(evt);
+            }
+        });
+
+        fetchCycles_JL.setText("fetchCycles");
+
+        fetchCycles_JTF.setText(ConfigFile.getFetchCycles()+"");
+        fetchCycles_JTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fetchCycles_JTFActionPerformed(evt);
+            }
+        });
+
+        memoryCycles_JL.setText("memoryCycles");
+
+        memoryCycles_JTF2.setText(ConfigFile.getMemoryCycles()+"");
+        memoryCycles_JTF2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                memoryCycles_JTF2ActionPerformed(evt);
+            }
+        });
+
+        writeCycles_JL.setText("writeCycles");
+
+        writeCycles_JTF3.setText(ConfigFile.getWriteCycles()+"");
+        writeCycles_JTF3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                writeCycles_JTF3ActionPerformed(evt);
+            }
+        });
+
+        scalable_JL.setText("scalable");
+
+        scalable_JTF.setText(ConfigFile.getScalability()+"");
+        scalable_JTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                scalable_JTFActionPerformed(evt);
+            }
+        });
+
+        nFUGeneric_JL.setText("nFUGeneric");
+        nFUGeneric_JL.setToolTipText("");
+
+        nFUGeneric_JTF.setText(ConfigFile.getnFUGeneric()+"");
+        nFUGeneric_JTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nFUGeneric_JTFActionPerformed(evt);
+            }
+        });
+
+        latencyGeneric_JL.setText("latencyGeneric");
+
+        LatencyGeneric_JTF.setText(ConfigFile.getLatencyGeneric()+"");
+        LatencyGeneric_JTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LatencyGeneric_JTFActionPerformed(evt);
+            }
+        });
+
+        nFUAdd_JL.setText("nFUAdd");
+
+        nFUAdd_JTF.setText(ConfigFile.getnFUAdd()+"");
+        nFUAdd_JTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nFUAdd_JTFActionPerformed(evt);
+            }
+        });
+
+        latencyAdd_JL.setText("latencyAdd");
+
+        latencyAdd_JTF.setText(ConfigFile.getLatencyAdd()+"");
+        latencyAdd_JTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                latencyAdd_JTFActionPerformed(evt);
+            }
+        });
+
+        nFUMult_JL.setText("nFUMult");
+
+        nFUMult_JTF.setText(ConfigFile.getnFUMult()+"");
+        nFUMult_JTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nFUMult_JTFActionPerformed(evt);
+            }
+        });
+
+        latencyFUMult_JL.setText("latencyFUMult");
+
+        latencyFUMult_JTF.setText(ConfigFile.getLatencyMult()+"");
+        latencyFUMult_JTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                latencyFUMult_JTFActionPerformed(evt);
+            }
+        });
+
+        sizeROB_JL.setText("sizeROB");
+
+        sizeROB_JTF.setText(ConfigFile.getSizeROB()+"");
+        sizeROB_JTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sizeROB_JTFActionPerformed(evt);
+            }
+        });
+
+        retirementROB_JL.setText("retirementROB");
+
+        retirementROB_JTF.setText(ConfigFile.getRetirROB()+"");
+        retirementROB_JTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                retirementROB_JTFActionPerformed(evt);
+            }
+        });
+
+        ROB_JL.setText("ROB(y/n)");
+
+        ROB_JTF.setText(ConfigFile.getROB()+"");
+        ROB_JTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ROB_JTFActionPerformed(evt);
+            }
+        });
+
+        tipusPrediccio_JL.setText("tipusPrediccio");
+
+        tipusPrediccio_JTF.setText(ConfigFile.getTipusPrediccio()+"");
+        tipusPrediccio_JTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tipusPrediccio_JTFActionPerformed(evt);
+            }
+        });
+
+        addressPredictor_JL.setText("addressPredictor(y/n)");
+
+        addressPredictor_JTF.setText(ConfigFile.isAddressPredictor()+"");
+        addressPredictor_JTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addressPredictor_JTFActionPerformed(evt);
+            }
+        });
+
+        forwarding_JL.setText("forwarding(y/n)");
+
+        SchedulerName_JTF16.setText(ConfigFile.hasForwarding()+"");
+        SchedulerName_JTF16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SchedulerName_JTF16ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(RandomFile_JL)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(RandomFile_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(SchedulerName_JL)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(SchedulerName_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(SchedulerName_JL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(SchedulerName_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(CommitCycles_JL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CommitCycles_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(writeCycles_JL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(writeCycles_JTF3, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(memoryCycles_JL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(memoryCycles_JTF2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(ExecuteCycles_JL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ExecuteCycles_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(DecodeCycles_JL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(DecodeCycles_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(fetchCycles_JL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(fetchCycles_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(nRegisters_JL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nRegisters_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(finishAddress_JL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(finishAddress_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(startAddress_JL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(startAddress_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(nBitsArchitecture_JL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nBitsArchitecture_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(RandomFile_JL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(RandomFile_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(SourcePath_JL)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(SourcePath_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(DecodeCycles_JL)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(DecodeCycles_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(CommitCycles_JL)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(CommitCycles_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(ExecuteCycles_JL)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(ExecuteCycles_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(262, 262, 262))
+                        .addComponent(SourcePath_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(forwarding_JL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(SchedulerName_JTF16, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(addressPredictor_JL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(addressPredictor_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(tipusPrediccio_JL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tipusPrediccio_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(ROB_JL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ROB_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(retirementROB_JL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(retirementROB_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(sizeROB_JL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(sizeROB_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(latencyFUMult_JL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(latencyFUMult_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(nFUMult_JL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nFUMult_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(latencyAdd_JL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(latencyAdd_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(nFUAdd_JL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nFUAdd_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(latencyGeneric_JL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LatencyGeneric_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(nFUGeneric_JL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nFUGeneric_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(scalable_JL)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(scalable_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(24, 24, 24))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(RandomFile_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(RandomFile_JTF))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SchedulerName_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SchedulerName_JTF))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SourcePath_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SourcePath_JTF))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CommitCycles_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CommitCycles_JTF))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(DecodeCycles_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(DecodeCycles_JTF))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ExecuteCycles_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ExecuteCycles_JTF))
-                .addGap(147, 147, 147))
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(SourcePath_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SourcePath_JTF))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(RandomFile_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(RandomFile_JTF))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nBitsArchitecture_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nBitsArchitecture_JTF))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(startAddress_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(startAddress_JTF))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(finishAddress_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(finishAddress_JTF))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nRegisters_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nRegisters_JTF))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(fetchCycles_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(fetchCycles_JTF))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(DecodeCycles_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DecodeCycles_JTF))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ExecuteCycles_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ExecuteCycles_JTF))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(memoryCycles_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(memoryCycles_JTF2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(writeCycles_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(writeCycles_JTF3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(CommitCycles_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CommitCycles_JTF))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(SchedulerName_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SchedulerName_JTF)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(scalable_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(scalable_JTF))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nFUGeneric_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nFUGeneric_JTF))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(latencyGeneric_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LatencyGeneric_JTF))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nFUAdd_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nFUAdd_JTF))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(latencyAdd_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(latencyAdd_JTF))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nFUMult_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(nFUMult_JTF))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(latencyFUMult_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(latencyFUMult_JTF))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(sizeROB_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(sizeROB_JTF))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(retirementROB_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(retirementROB_JTF))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ROB_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ROB_JTF))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tipusPrediccio_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tipusPrediccio_JTF))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(addressPredictor_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(addressPredictor_JTF))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(forwarding_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SchedulerName_JTF16))))
+                .addContainerGap())
         );
 
         pack();
@@ -200,6 +594,90 @@ public class gui2 extends javax.swing.JFrame {
     private void ExecuteCycles_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExecuteCycles_JTFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ExecuteCycles_JTFActionPerformed
+
+    private void nBitsArchitecture_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nBitsArchitecture_JTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nBitsArchitecture_JTFActionPerformed
+
+    private void startAddress_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startAddress_JTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_startAddress_JTFActionPerformed
+
+    private void SchedulerName_JTF3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SchedulerName_JTF3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SchedulerName_JTF3ActionPerformed
+
+    private void finishAddress_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finishAddress_JTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_finishAddress_JTFActionPerformed
+
+    private void nRegisters_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nRegisters_JTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nRegisters_JTFActionPerformed
+
+    private void fetchCycles_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fetchCycles_JTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fetchCycles_JTFActionPerformed
+
+    private void memoryCycles_JTF2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memoryCycles_JTF2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_memoryCycles_JTF2ActionPerformed
+
+    private void writeCycles_JTF3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_writeCycles_JTF3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_writeCycles_JTF3ActionPerformed
+
+    private void scalable_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scalable_JTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_scalable_JTFActionPerformed
+
+    private void nFUGeneric_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nFUGeneric_JTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nFUGeneric_JTFActionPerformed
+
+    private void LatencyGeneric_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LatencyGeneric_JTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LatencyGeneric_JTFActionPerformed
+
+    private void nFUAdd_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nFUAdd_JTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nFUAdd_JTFActionPerformed
+
+    private void latencyAdd_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_latencyAdd_JTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_latencyAdd_JTFActionPerformed
+
+    private void nFUMult_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nFUMult_JTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nFUMult_JTFActionPerformed
+
+    private void latencyFUMult_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_latencyFUMult_JTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_latencyFUMult_JTFActionPerformed
+
+    private void sizeROB_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sizeROB_JTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sizeROB_JTFActionPerformed
+
+    private void retirementROB_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retirementROB_JTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_retirementROB_JTFActionPerformed
+
+    private void ROB_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ROB_JTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ROB_JTFActionPerformed
+
+    private void tipusPrediccio_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipusPrediccio_JTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tipusPrediccio_JTFActionPerformed
+
+    private void addressPredictor_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressPredictor_JTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addressPredictor_JTFActionPerformed
+
+    private void SchedulerName_JTF16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SchedulerName_JTF16ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SchedulerName_JTF16ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -249,12 +727,54 @@ public class gui2 extends javax.swing.JFrame {
     private javax.swing.JTextField DecodeCycles_JTF;
     private javax.swing.JLabel ExecuteCycles_JL;
     private javax.swing.JTextField ExecuteCycles_JTF;
+    private javax.swing.JTextField LatencyGeneric_JTF;
+    private javax.swing.JLabel ROB_JL;
+    private javax.swing.JTextField ROB_JTF;
     private javax.swing.JLabel RandomFile_JL;
     private javax.swing.JTextField RandomFile_JTF;
     private javax.swing.JLabel SchedulerName_JL;
+    private javax.swing.JLabel SchedulerName_JL3;
     private javax.swing.JTextField SchedulerName_JTF;
+    private javax.swing.JTextField SchedulerName_JTF16;
+    private javax.swing.JTextField SchedulerName_JTF3;
     private javax.swing.JLabel SourcePath_JL;
     private javax.swing.JTextField SourcePath_JTF;
+    private javax.swing.JLabel addressPredictor_JL;
+    private javax.swing.JTextField addressPredictor_JTF;
+    private javax.swing.JLabel fetchCycles_JL;
+    private javax.swing.JTextField fetchCycles_JTF;
+    private javax.swing.JLabel finishAddress_JL;
+    private javax.swing.JTextField finishAddress_JTF;
+    private javax.swing.JLabel forwarding_JL;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel latencyAdd_JL;
+    private javax.swing.JTextField latencyAdd_JTF;
+    private javax.swing.JLabel latencyFUMult_JL;
+    private javax.swing.JTextField latencyFUMult_JTF;
+    private javax.swing.JLabel latencyGeneric_JL;
+    private javax.swing.JLabel memoryCycles_JL;
+    private javax.swing.JTextField memoryCycles_JTF2;
+    private javax.swing.JLabel nBitsArchitecture_JL;
+    private javax.swing.JTextField nBitsArchitecture_JTF;
+    private javax.swing.JLabel nFUAdd_JL;
+    private javax.swing.JTextField nFUAdd_JTF;
+    private javax.swing.JLabel nFUGeneric_JL;
+    private javax.swing.JTextField nFUGeneric_JTF;
+    private javax.swing.JLabel nFUMult_JL;
+    private javax.swing.JTextField nFUMult_JTF;
+    private javax.swing.JLabel nRegisters_JL;
+    private javax.swing.JTextField nRegisters_JTF;
+    private javax.swing.JLabel retirementROB_JL;
+    private javax.swing.JTextField retirementROB_JTF;
+    private javax.swing.JLabel scalable_JL;
+    private javax.swing.JTextField scalable_JTF;
+    private javax.swing.JLabel sizeROB_JL;
+    private javax.swing.JTextField sizeROB_JTF;
+    private javax.swing.JLabel startAddress_JL;
+    private javax.swing.JTextField startAddress_JTF;
+    private javax.swing.JLabel tipusPrediccio_JL;
+    private javax.swing.JTextField tipusPrediccio_JTF;
+    private javax.swing.JLabel writeCycles_JL;
+    private javax.swing.JTextField writeCycles_JTF3;
     // End of variables declaration//GEN-END:variables
 }
