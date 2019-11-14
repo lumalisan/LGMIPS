@@ -105,6 +105,7 @@ public class gui2 extends javax.swing.JFrame {
         });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         RandomFile_JL.setText("RandomFile(y/n)");
 
