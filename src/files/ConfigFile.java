@@ -73,7 +73,6 @@ public class ConfigFile {
         nBits = Integer.parseInt(normalizeKey(prop.getProperty("nBits")));
         startAdress = Integer.parseInt(normalizeKey(prop.getProperty("startAdress")));
         finishAdress = Integer.parseInt(normalizeKey(prop.getProperty("finishAdress")));
-        nRegister = Integer.parseInt(normalizeKey(prop.getProperty("nRegister")));
         fetchCycles = Integer.parseInt(normalizeKey(prop.getProperty("fetchCycles")));
         decodeCycles = Integer.parseInt(normalizeKey(prop.getProperty("decodeCycles")));
         executeCycles = Integer.parseInt(normalizeKey(prop.getProperty("executeCycles")));
@@ -92,6 +91,13 @@ public class ConfigFile {
         latencyMult = Integer.parseInt(normalizeKey(prop.getProperty("latencyMult")));
         retirROB = Integer.parseInt(normalizeKey(prop.getProperty("retirementROB")));
         ROB = normalizeKey(prop.getProperty("ROB(y/n)"));
+        
+        nRegister = Integer.parseInt(normalizeKey(prop.getProperty("nRegister")));
+        if (nRegister > 64) {
+            System.out.println("**El número de registros supera el máximo permitido de 64. Impostando el número máximo.**");
+            nRegister = 64;
+        }
+
 
         // Añadido
         try {
@@ -320,7 +326,12 @@ public class ConfigFile {
     }
 
     public static void setnRegister(int nRegister) {
-        ConfigFile.nRegister = nRegister;
+        if (nRegister <= 64)
+            ConfigFile.nRegister = nRegister;
+        else {
+            System.out.println("nRegister is too big, setting to 64");
+            ConfigFile.nRegister = 64;
+        }
     }
 
     public static void setFetchCycles(int fetchCycles) {
