@@ -122,6 +122,11 @@ public final class Architecture implements MIPS {
                 registers.put(name, value);
             }
         }
+        
+        System.out.println("DEBUG - Intento añadir registro n. 69");
+        cr.setRegister(69, 420);
+        System.out.println("DEBUG - Añadido, comprueba el fichero de registros");
+        
     }
     
 //    public static ROB getRob() {

@@ -1,7 +1,17 @@
 --------SCHEDULING RESULT--------------
-LW r30,age
+LW r1,init
 
-ADD r2,r3,r4
+SUB r3,r2,r1
 
-SB r30,gpa
+ADD r2,r2,r1
+
+BNE r2,r4,loop
+
+LW r1,init
+
+SUB r6,r7,r1
+
+ADD r7,r7,r1
+
+BNE r7,r4,ppep
 
