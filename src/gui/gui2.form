@@ -109,16 +109,14 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="startAddress_JTF" min="-2" pref="102" max="-2" attributes="0"/>
                   </Group>
+                  <Group type="103" alignment="1" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="jCheckBox3" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jCheckBox4" alignment="0" max="32767" attributes="0"/>
+                  </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="nBitsArchitecture_JL" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="nBitsArchitecture_JTF" min="-2" pref="102" max="-2" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="jCheckBox3" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jCheckBox4" alignment="0" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <Component id="nBitsArchitecture_JTF" min="-2" pref="102" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace type="separate" max="32767" attributes="0"/>
@@ -203,6 +201,10 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="latencyGeneric_JL" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                           <Component id="LatencyGeneric_JTF" alignment="3" max="32767" attributes="0"/>
+                          <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                              <Component id="nBitsArchitecture_JL" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="nBitsArchitecture_JTF" alignment="3" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -258,12 +260,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Component id="jCheckBox4" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="nBitsArchitecture_JL" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                          <Component id="nBitsArchitecture_JTF" alignment="3" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="startAddress_JL" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                           <Component id="startAddress_JTF" alignment="3" max="32767" attributes="0"/>
@@ -399,6 +396,7 @@
     <Component class="javax.swing.JLabel" name="nBitsArchitecture_JL">
       <Properties>
         <Property name="text" type="java.lang.String" value="nBits Architecture"/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="nBitsArchitecture_JTF">
@@ -675,7 +673,7 @@
     </Component>
     <Component class="javax.swing.JCheckBox" name="jCheckBox4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="adressPredictor"/>
+        <Property name="text" type="java.lang.String" value="addressPredictor"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox4ActionPerformed"/>
