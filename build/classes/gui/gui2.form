@@ -32,6 +32,46 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SchedulerName_JTF3ActionPerformed"/>
       </Events>
     </Component>
+    <Component class="javax.swing.JTextField" name="tipusPrediccio_JTF">
+      <Properties>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="ConfigFile.getTipusPrediccio()+&quot;&quot;" type="code"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tipusPrediccio_JTFActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="SchedulerName_JTF">
+      <Properties>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="ConfigFile.getSchedulerName()+&quot;&quot;" type="code"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SchedulerName_JTFActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JSlider" name="jSlider1">
+    </Component>
+    <Component class="javax.swing.JSeparator" name="jSeparator1">
+    </Component>
+    <Component class="javax.swing.JSpinner" name="jSpinner1">
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="jCheckBox5">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jCheckBox5"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jButton1"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+    </Container>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
@@ -58,20 +98,9 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< HEAD
                   <Group type="102" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="19" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="SchedulerName_JL" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="SchedulerName_JTF" min="-2" pref="102" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="CommitCycles_JL" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="CommitCycles_JTF" min="-2" pref="102" max="-2" attributes="0"/>
-                          </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="writeCycles_JL" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
@@ -117,95 +146,36 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="nBitsArchitecture_JTF" min="-2" pref="102" max="-2" attributes="0"/>
                           </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="SchedulerName_JL" min="-2" max="-2" attributes="0"/>
+                                  <Component id="CommitCycles_JL" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="CommitCycles_JTF" min="-2" pref="102" max="-2" attributes="0"/>
+                                  <Component id="SchedulerName_ComboBox" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                      <Component id="jTabbedPane2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jCheckBox4" max="32767" attributes="0"/>
+                          <Component id="addressPredictor_CB" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Component id="jCheckBox3" min="-2" pref="169" max="-2" attributes="0"/>
+                              <Component id="RandomFile_CB" min="-2" pref="169" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-=======
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="SchedulerName_JL" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="SchedulerName_JTF" min="-2" pref="102" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="CommitCycles_JL" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="CommitCycles_JTF" min="-2" pref="102" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="writeCycles_JL" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="writeCycles_JTF3" min="-2" pref="102" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="memoryCycles_JL" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="memoryCycles_JTF2" min="-2" pref="102" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="ExecuteCycles_JL" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="ExecuteCycles_JTF" min="-2" pref="102" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="DecodeCycles_JL" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="DecodeCycles_JTF" min="-2" pref="102" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="fetchCycles_JL" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="fetchCycles_JTF" min="-2" pref="102" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="nRegisters_JL" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="nRegisters_JTF" min="-2" pref="102" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="finishAddress_JL" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="finishAddress_JTF" min="-2" pref="102" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="startAddress_JL" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="startAddress_JTF" min="-2" pref="102" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="nBitsArchitecture_JL" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="nBitsArchitecture_JTF" min="-2" pref="102" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jCheckBox3" alignment="1" max="32767" attributes="0"/>
-                      <Component id="jCheckBox4" alignment="1" pref="106" max="32767" attributes="0"/>
->>>>>>> d4c2c40de401633d61857b4ef97d9c565da4cbbe
                   </Group>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-<<<<<<< HEAD
                   <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="tipusPrediccio_JL" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="tipusPrediccio_JTF" min="-2" pref="102" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="retirementROB_JL" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="retirementROB_JTF" min="-2" pref="102" max="-2" attributes="0"/>
-                              </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="sizeROB_JL" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -232,136 +202,88 @@
                                   <Component id="nFUAdd_JTF" min="-2" pref="102" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
-                                  <Component id="scalable_JL" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="scalable_JTF" min="-2" pref="102" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="SourcePath_JL" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="SourcePath_JTF" min="-2" pref="102" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
                                   <Component id="latencyGeneric_JL" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="LatencyGeneric_JTF" min="-2" pref="102" max="-2" attributes="0"/>
                               </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="retirementROB_JL" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="retirementROB_JTF" min="-2" pref="102" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="nFUGeneric_JL" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="nFUGeneric_JTF" min="-2" pref="102" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-=======
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="tipusPrediccio_JL" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="tipusPrediccio_JTF" min="-2" pref="102" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="retirementROB_JL" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="retirementROB_JTF" min="-2" pref="102" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="sizeROB_JL" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="sizeROB_JTF" min="-2" pref="102" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="latencyFUMult_JL" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="latencyFUMult_JTF" min="-2" pref="102" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="nFUMult_JL" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="nFUMult_JTF" min="-2" pref="102" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="latencyAdd_JL" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="latencyAdd_JTF" min="-2" pref="102" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="nFUAdd_JL" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="nFUAdd_JTF" min="-2" pref="102" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="scalable_JL" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="scalable_JTF" min="-2" pref="102" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="SourcePath_JL" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="SourcePath_JTF" min="-2" pref="102" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="latencyGeneric_JL" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="LatencyGeneric_JTF" pref="102" max="32767" attributes="0"/>
-                              <Component id="jCheckBox2" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jCheckBox1" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="tipusPrediccio_JL" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="tipusPrediccio_ComboBox" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="scalable_JL" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="scalable_JTF" min="-2" pref="102" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="SourcePath_JL" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="SourcePath_JTF" min="-2" pref="102" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="nFUGeneric_JL" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="nFUGeneric_JTF" min="-2" pref="102" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                              </Group>
                           </Group>
                       </Group>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="nFUGeneric_JL" min="-2" max="-2" attributes="0"/>
->>>>>>> d4c2c40de401633d61857b4ef97d9c565da4cbbe
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
-<<<<<<< HEAD
-                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="2" attributes="0">
-                          <Component id="jCheckBox1" alignment="2" min="-2" pref="140" max="-2" attributes="0"/>
-                          <Component id="jCheckBox2" alignment="2" min="-2" pref="140" max="-2" attributes="0"/>
+                          <Component id="ROB_CB" alignment="2" min="-2" pref="140" max="-2" attributes="0"/>
+                          <Component id="forwarding_CB" alignment="2" min="-2" pref="140" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                   </Group>
               </Group>
-=======
-              </Group>
+              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="Return_BT" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
->>>>>>> d4c2c40de401633d61857b4ef97d9c565da4cbbe
+              <Component id="SaveClose_BT" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-<<<<<<< HEAD
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                      <Component id="jCheckBox4" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jCheckBox1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jCheckBox3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="addressPredictor_CB" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jCheckBox2" min="-2" max="-2" attributes="0"/>
-=======
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jCheckBox2" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="ROB_CB" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="RandomFile_CB" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="forwarding_CB" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <Group type="102" attributes="0">
-                      <Component id="jCheckBox3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jCheckBox4" min="-2" max="-2" attributes="0"/>
->>>>>>> d4c2c40de401633d61857b4ef97d9c565da4cbbe
-                  </Group>
+                  <Component id="jTabbedPane2" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -418,7 +340,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="SchedulerName_JL" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                          <Component id="SchedulerName_JTF" alignment="3" max="32767" attributes="0"/>
+                          <Component id="SchedulerName_ComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" attributes="0">
@@ -463,11 +385,6 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="tipusPrediccio_JL" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                          <Component id="tipusPrediccio_JTF" alignment="3" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="scalable_JL" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                           <Component id="scalable_JTF" alignment="3" max="32767" attributes="0"/>
                       </Group>
@@ -476,7 +393,17 @@
                           <Component id="SourcePath_JL" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
                           <Component id="SourcePath_JTF" alignment="3" max="32767" attributes="0"/>
                       </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="tipusPrediccio_JL" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                          <Component id="tipusPrediccio_ComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
+              </Group>
+              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="Return_BT" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="SaveClose_BT" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -488,16 +415,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="SchedulerName"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="SchedulerName_JTF">
-      <Properties>
-        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="ConfigFile.getSchedulerName()+&quot;&quot;" type="code"/>
-        </Property>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SchedulerName_JTFActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="SourcePath_JL">
       <Properties>
@@ -805,38 +722,31 @@
         <Property name="text" type="java.lang.String" value="tipusPrediccio"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="tipusPrediccio_JTF">
-      <Properties>
-        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="ConfigFile.getTipusPrediccio()+&quot;&quot;" type="code"/>
-        </Property>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tipusPrediccio_JTFActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox1">
+    <Component class="javax.swing.JCheckBox" name="ROB_CB">
       <Properties>
         <Property name="text" type="java.lang.String" value="ROB"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ROB_CBActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox2">
+    <Component class="javax.swing.JCheckBox" name="forwarding_CB">
       <Properties>
         <Property name="text" type="java.lang.String" value="forwarding"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="forwarding_CBActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox3">
+    <Component class="javax.swing.JCheckBox" name="RandomFile_CB">
       <Properties>
         <Property name="text" type="java.lang.String" value="RandomFile"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RandomFile_CBActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JCheckBox" name="jCheckBox4">
+    <Component class="javax.swing.JCheckBox" name="addressPredictor_CB">
       <Properties>
         <Property name="text" type="java.lang.String" value="addressPredictor"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -850,8 +760,58 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBox4ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addressPredictor_CBActionPerformed"/>
       </Events>
     </Component>
+    <Component class="javax.swing.JComboBox" name="tipusPrediccio_ComboBox">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="4">
+            <StringItem index="0" value="Not Taken"/>
+            <StringItem index="1" value="Taken"/>
+            <StringItem index="2" value="One Bit"/>
+            <StringItem index="3" value="Two Bit"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="tipusPrediccio_ComboBoxItemStateChanged"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="SchedulerName_ComboBox">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="1">
+            <StringItem index="0" value="enOrden"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SchedulerName_ComboBoxActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JButton" name="Return_BT">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Return"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Return_BTActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="SaveClose_BT">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Save &amp; Close"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JTabbedPane" name="jTabbedPane2">
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+    </Container>
   </SubComponents>
 </Form>

@@ -40,8 +40,15 @@ public class gui2 extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
         SchedulerName_JL3 = new javax.swing.JLabel();
         SchedulerName_JTF3 = new javax.swing.JTextField();
-        SchedulerName_JL = new javax.swing.JLabel();
+        tipusPrediccio_JTF = new javax.swing.JTextField();
         SchedulerName_JTF = new javax.swing.JTextField();
+        jSlider1 = new javax.swing.JSlider();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSpinner1 = new javax.swing.JSpinner();
+        jCheckBox5 = new javax.swing.JCheckBox();
+        jButton1 = new javax.swing.JButton();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        SchedulerName_JL = new javax.swing.JLabel();
         SourcePath_JL = new javax.swing.JLabel();
         SourcePath_JTF = new javax.swing.JTextField();
         CommitCycles_JTF = new javax.swing.JTextField();
@@ -83,11 +90,15 @@ public class gui2 extends javax.swing.JFrame {
         retirementROB_JL = new javax.swing.JLabel();
         retirementROB_JTF = new javax.swing.JTextField();
         tipusPrediccio_JL = new javax.swing.JLabel();
-        tipusPrediccio_JTF = new javax.swing.JTextField();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
+        ROB_CB = new javax.swing.JCheckBox();
+        forwarding_CB = new javax.swing.JCheckBox();
+        RandomFile_CB = new javax.swing.JCheckBox();
+        addressPredictor_CB = new javax.swing.JCheckBox();
+        tipusPrediccio_ComboBox = new javax.swing.JComboBox<>();
+        SchedulerName_ComboBox = new javax.swing.JComboBox<>();
+        Return_BT = new javax.swing.JButton();
+        SaveClose_BT = new javax.swing.JButton();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -100,10 +111,12 @@ public class gui2 extends javax.swing.JFrame {
             }
         });
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
-
-        SchedulerName_JL.setText("SchedulerName");
+        tipusPrediccio_JTF.setText(ConfigFile.getTipusPrediccio()+"");
+        tipusPrediccio_JTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tipusPrediccio_JTFActionPerformed(evt);
+            }
+        });
 
         SchedulerName_JTF.setText(ConfigFile.getSchedulerName()+"");
         SchedulerName_JTF.addActionListener(new java.awt.event.ActionListener() {
@@ -111,6 +124,15 @@ public class gui2 extends javax.swing.JFrame {
                 SchedulerName_JTFActionPerformed(evt);
             }
         });
+
+        jCheckBox5.setText("jCheckBox5");
+
+        jButton1.setText("jButton1");
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+
+        SchedulerName_JL.setText("SchedulerName");
 
         SourcePath_JL.setText("SourcePath");
 
@@ -295,38 +317,59 @@ public class gui2 extends javax.swing.JFrame {
 
         tipusPrediccio_JL.setText("tipusPrediccio");
 
-        tipusPrediccio_JTF.setText(ConfigFile.getTipusPrediccio()+"");
-        tipusPrediccio_JTF.addActionListener(new java.awt.event.ActionListener() {
+        ROB_CB.setText("ROB");
+        ROB_CB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tipusPrediccio_JTFActionPerformed(evt);
+                ROB_CBActionPerformed(evt);
             }
         });
 
-        jCheckBox1.setText("ROB");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        forwarding_CB.setText("forwarding");
+        forwarding_CB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                forwarding_CBActionPerformed(evt);
             }
         });
 
-        jCheckBox2.setText("forwarding");
-        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+        RandomFile_CB.setText("RandomFile");
+        RandomFile_CB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox2ActionPerformed(evt);
+                RandomFile_CBActionPerformed(evt);
             }
         });
 
-        jCheckBox3.setText("RandomFile");
-
-        jCheckBox4.setText("addressPredictor");
-        jCheckBox4.setMaximumSize(new java.awt.Dimension(102, 23));
-        jCheckBox4.setMinimumSize(new java.awt.Dimension(102, 23));
-        jCheckBox4.setPreferredSize(new java.awt.Dimension(102, 23));
-        jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
+        addressPredictor_CB.setText("addressPredictor");
+        addressPredictor_CB.setMaximumSize(new java.awt.Dimension(102, 23));
+        addressPredictor_CB.setMinimumSize(new java.awt.Dimension(102, 23));
+        addressPredictor_CB.setPreferredSize(new java.awt.Dimension(102, 23));
+        addressPredictor_CB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox4ActionPerformed(evt);
+                addressPredictor_CBActionPerformed(evt);
             }
         });
+
+        tipusPrediccio_ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Not Taken", "Taken", "One Bit", "Two Bit" }));
+        tipusPrediccio_ComboBox.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                tipusPrediccio_ComboBoxItemStateChanged(evt);
+            }
+        });
+
+        SchedulerName_ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "enOrden" }));
+        SchedulerName_ComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SchedulerName_ComboBoxActionPerformed(evt);
+            }
+        });
+
+        Return_BT.setText("Return");
+        Return_BT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Return_BTActionPerformed(evt);
+            }
+        });
+
+        SaveClose_BT.setText("Save & Close");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -335,16 +378,8 @@ public class gui2 extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap(19, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(SchedulerName_JL)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(SchedulerName_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(CommitCycles_JL)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(CommitCycles_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(writeCycles_JL)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -380,27 +415,28 @@ public class gui2 extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(nBitsArchitecture_JL)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(nBitsArchitecture_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(nBitsArchitecture_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(SchedulerName_JL)
+                                    .addComponent(CommitCycles_JL))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(CommitCycles_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(SchedulerName_ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
+                        .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(addressPredictor_CB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jCheckBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(RandomFile_CB, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE)))))
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(90, 90, 90)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(tipusPrediccio_JL)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(tipusPrediccio_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(retirementROB_JL)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(retirementROB_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                     .addComponent(sizeROB_JL)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -422,42 +458,65 @@ public class gui2 extends javax.swing.JFrame {
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(nFUAdd_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(scalable_JL)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(scalable_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(SourcePath_JL)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(SourcePath_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                     .addComponent(latencyGeneric_JL)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(LatencyGeneric_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(nFUGeneric_JL)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(nFUGeneric_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap())
+                                    .addComponent(LatencyGeneric_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(retirementROB_JL)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(retirementROB_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(2, 2, 2)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(tipusPrediccio_JL)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(tipusPrediccio_ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(19, 19, 19)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addComponent(scalable_JL)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(scalable_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addComponent(SourcePath_JL)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(SourcePath_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addComponent(nFUGeneric_JL)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(nFUGeneric_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))))))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(74, 74, 74)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jCheckBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(34, 34, 34))))
+                            .addComponent(ROB_CB, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(forwarding_CB, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(46, 46, 46)))
+                .addGap(15, 15, 15))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Return_BT)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(SaveClose_BT)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addComponent(jCheckBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jCheckBox1)
-                            .addComponent(jCheckBox3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox2)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(35, 35, 35)
+                            .addComponent(addressPredictor_CB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(ROB_CB)
+                                .addComponent(RandomFile_CB))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(forwarding_CB)))
+                    .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -503,7 +562,7 @@ public class gui2 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(SchedulerName_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(SchedulerName_JTF)))
+                            .addComponent(SchedulerName_ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(latencyGeneric_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -538,16 +597,20 @@ public class gui2 extends javax.swing.JFrame {
                             .addComponent(nFUGeneric_JTF))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tipusPrediccio_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tipusPrediccio_JTF))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(scalable_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(scalable_JTF))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(SourcePath_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(SourcePath_JTF))))
+                            .addComponent(SourcePath_JTF))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tipusPrediccio_JL, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tipusPrediccio_ComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(14, 14, 14)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Return_BT)
+                    .addComponent(SaveClose_BT))
                 .addContainerGap())
         );
 
@@ -646,17 +709,33 @@ public class gui2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tipusPrediccio_JTFActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void ROB_CBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ROB_CBActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_ROB_CBActionPerformed
 
-    private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
+    private void addressPredictor_CBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressPredictor_CBActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox4ActionPerformed
+    }//GEN-LAST:event_addressPredictor_CBActionPerformed
 
-    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+    private void forwarding_CBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forwarding_CBActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox2ActionPerformed
+    }//GEN-LAST:event_forwarding_CBActionPerformed
+
+    private void Return_BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Return_BTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Return_BTActionPerformed
+
+    private void tipusPrediccio_ComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_tipusPrediccio_ComboBoxItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tipusPrediccio_ComboBoxItemStateChanged
+
+    private void SchedulerName_ComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SchedulerName_ComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SchedulerName_ComboBoxActionPerformed
+
+    private void RandomFile_CBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RandomFile_CBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RandomFile_CBActionPerformed
 
     /**
      * @param args the command line arguments
@@ -707,21 +786,31 @@ public class gui2 extends javax.swing.JFrame {
     private javax.swing.JLabel ExecuteCycles_JL;
     private javax.swing.JTextField ExecuteCycles_JTF;
     private javax.swing.JTextField LatencyGeneric_JTF;
+    private javax.swing.JCheckBox ROB_CB;
+    private javax.swing.JCheckBox RandomFile_CB;
+    private javax.swing.JButton Return_BT;
+    private javax.swing.JButton SaveClose_BT;
+    private javax.swing.JComboBox<String> SchedulerName_ComboBox;
     private javax.swing.JLabel SchedulerName_JL;
     private javax.swing.JLabel SchedulerName_JL3;
     private javax.swing.JTextField SchedulerName_JTF;
     private javax.swing.JTextField SchedulerName_JTF3;
     private javax.swing.JLabel SourcePath_JL;
     private javax.swing.JTextField SourcePath_JTF;
+    private javax.swing.JCheckBox addressPredictor_CB;
     private javax.swing.JLabel fetchCycles_JL;
     private javax.swing.JTextField fetchCycles_JTF;
     private javax.swing.JLabel finishAddress_JL;
     private javax.swing.JTextField finishAddress_JTF;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
+    private javax.swing.JCheckBox forwarding_CB;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JCheckBox jCheckBox5;
     private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSlider jSlider1;
+    private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JLabel latencyAdd_JL;
     private javax.swing.JTextField latencyAdd_JTF;
     private javax.swing.JLabel latencyFUMult_JL;
@@ -747,6 +836,7 @@ public class gui2 extends javax.swing.JFrame {
     private javax.swing.JTextField sizeROB_JTF;
     private javax.swing.JLabel startAddress_JL;
     private javax.swing.JTextField startAddress_JTF;
+    private javax.swing.JComboBox<String> tipusPrediccio_ComboBox;
     private javax.swing.JLabel tipusPrediccio_JL;
     private javax.swing.JTextField tipusPrediccio_JTF;
     private javax.swing.JLabel writeCycles_JL;
