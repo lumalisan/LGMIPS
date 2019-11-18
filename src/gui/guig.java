@@ -55,8 +55,13 @@ public class guig extends javax.swing.JFrame {
         jButton1.setText("Properties");
         jButton1.setMaximumSize(new java.awt.Dimension(82, 23));
         jButton1.setMinimumSize(new java.awt.Dimension(82, 23));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton1);
-        jButton1.setBounds(159, 59, 82, 23);
+        jButton1.setBounds(159, 59, 82, 29);
 
         jButton2.setText("Registers");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -65,24 +70,22 @@ public class guig extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton2);
-        jButton2.setBounds(159, 112, 82, 23);
+        jButton2.setBounds(159, 112, 82, 29);
 
         jButton3.setText("Execute");
         jPanel1.add(jButton3);
-        jButton3.setBounds(159, 165, 82, 23);
+        jButton3.setBounds(159, 165, 82, 29);
 
         jButton4.setText("Exit");
         jPanel1.add(jButton4);
-        jButton4.setBounds(159, 218, 82, 23);
+        jButton4.setBounds(159, 218, 82, 29);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Asus\\Desktop\\LGMIPS\\Arquitectura-de-las-Computadoras.jpg")); // NOI18N
         jLabel2.setMaximumSize(new java.awt.Dimension(400, 300));
         jLabel2.setMinimumSize(new java.awt.Dimension(400, 300));
         jLabel2.setOpaque(true);
         jLabel2.setPreferredSize(new java.awt.Dimension(400, 300));
         jPanel1.add(jLabel2);
         jLabel2.setBounds(0, 0, 400, 300);
-        jLabel2.getAccessibleContext().setAccessibleName("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -101,6 +104,11 @@ public class guig extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.setVisible(false);
+        gui2.main(null);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

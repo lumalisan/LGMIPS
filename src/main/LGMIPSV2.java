@@ -22,8 +22,8 @@ public class LGMIPSV2 {
 
     public static void main(String[] args) throws FileNotFoundException, IOException {
         
-        gui2.main(null);
-        
+        guig.main(null);
+        //gui2.main(null);
         
         ConfigFile conf = new ConfigFile(configPath);
         conf.loadConfig();

@@ -129,8 +129,16 @@ public class gui2 extends javax.swing.JFrame {
 
         jButton1.setText("jButton1");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+            public void windowClosed(java.awt.event.WindowEvent evt) {
+                formWindowClosed(evt);
+            }
+        });
 
         SchedulerName_JL.setText("SchedulerName");
 
@@ -722,7 +730,8 @@ public class gui2 extends javax.swing.JFrame {
     }//GEN-LAST:event_forwarding_CBActionPerformed
 
     private void Return_BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Return_BTActionPerformed
-        // TODO add your handling code here:
+        this.dispose();
+        guig.getFrames()[0].setVisible(true);
     }//GEN-LAST:event_Return_BTActionPerformed
 
     private void tipusPrediccio_ComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_tipusPrediccio_ComboBoxItemStateChanged
@@ -736,6 +745,15 @@ public class gui2 extends javax.swing.JFrame {
     private void RandomFile_CBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RandomFile_CBActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_RandomFile_CBActionPerformed
+
+    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formWindowClosed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        this.dispose();
+        guig.getFrames()[0].setVisible(true);
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments
