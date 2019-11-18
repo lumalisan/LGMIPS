@@ -68,6 +68,7 @@ public class SourceFile {
             int points = list.get(i).indexOf(":");
             if (points != -1) {                
                 String label = list.get(i).substring(0, points);
+                label = label.replaceAll("\\s+", "");
                 Architecture.addBrachPoint(label, nLineLocal);
                 //System.out.println("LABEL + "+label +" i "+nLine);
             }
