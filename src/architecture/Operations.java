@@ -105,7 +105,10 @@ public class Operations {
         int src1 = reg.get(key1);
 
         String key2 = s[2];
-        int src2 = reg.get(key2);
+        //Bug al coger el segundo parámetro desde REG y no directamente 
+        //con un parseInt
+        //int src2 = reg.get(key2);
+        int src2 = Integer.parseInt(key2);
 
         String keyDst = s[0];
         int result = src2 + src1;
@@ -121,7 +124,8 @@ public class Operations {
         int src1 = reg.get(key1);
 
         String key2 = s[2];
-        int src2 = reg.get(key2);
+        //int src2 = reg.get(key2);
+        int src2 = Integer.parseInt(key2);
 
         String keyDst = s[0];
         int result = src2 & src1;
@@ -136,7 +140,8 @@ public class Operations {
         int src1 = reg.get(key1);
 
         String key2 = s[2];
-        int src2 = reg.get(key2);
+        //int src2 = reg.get(key2);
+        int src2 = Integer.parseInt(key2);
 
         String keyDst = s[0];
         int result = src2 | src1;
@@ -150,7 +155,8 @@ public class Operations {
         int src1 = reg.get(key1);
 
         String key2 = s[2];
-        int src2 = reg.get(key2);
+        //int src2 = reg.get(key2);
+        int src2 = Integer.parseInt(key2);
 
         String keyDst = s[0];
         int result = src2 ^ src1;
@@ -180,9 +186,6 @@ public class Operations {
         HashMap<String, Integer> reg = Architecture.getRegisters();
         String key1 = s[1];
         int src1 = reg.get(key1);
-
-        int aux = Integer.MAX_VALUE;
-        int aux2 = 16;
         
         String key2 = s[2];
         int src2 = reg.get(key2);
