@@ -6,6 +6,11 @@
 package gui;
 
 import files.ConfigFile;
+import java.io.IOException;
+import static java.lang.System.exit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import main.LGMIPSV2;
 
 /**
  *
@@ -762,10 +767,17 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        LGMIPSV2 lg = new LGMIPSV2();
+        try {
+            lg.init();
+        } catch (IOException ex) {
+            Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

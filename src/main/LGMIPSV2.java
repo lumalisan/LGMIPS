@@ -19,12 +19,8 @@ public class LGMIPSV2 {
     static String path;       
     static String configPath = "config.properties";
     static String outFile;
-
-    public static void main(String[] args) throws FileNotFoundException, IOException {
-        
-        NewJFrame.main(null);
-        //gui2.main(null);
-        
+    
+    public void init() throws IOException{
         ConfigFile conf = new ConfigFile(configPath);
         conf.loadConfig();
         ConfigFile.showConfig();
@@ -41,5 +37,9 @@ public class LGMIPSV2 {
         }
         Architecture a = new Architecture(ConfigFile.getnBits(), path);
         a.simulateMIPS();
+    }
+
+    public static void main(String[] args) throws FileNotFoundException, IOException {
+        NewJFrame.main(null);
     }
 }
