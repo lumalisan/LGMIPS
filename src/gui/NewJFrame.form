@@ -269,10 +269,10 @@
                                               <Component id="nFUAdd_JTF" min="-2" pref="102" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace min="0" pref="2" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="34" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="1" attributes="0">
                                           <Component id="SaveClose_BT" min="-2" max="-2" attributes="0"/>
                                           <Group type="102" attributes="0">
@@ -296,7 +296,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="22" max="32767" attributes="0"/>
+                      <EmptySpace pref="54" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -436,6 +436,7 @@
             <Component class="javax.swing.JLabel" name="nFUAdd_JL">
               <Properties>
                 <Property name="text" type="java.lang.String" value="nFUAdd"/>
+                <Property name="toolTipText" type="java.lang.String" value="number of add propose functional units"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="nFUAdd_JTF">
@@ -443,6 +444,7 @@
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="ConfigFile.getnFUAdd()+&quot;&quot;" type="code"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="number of add propose functional units"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nFUAdd_JTFActionPerformed"/>
@@ -451,6 +453,7 @@
             <Component class="javax.swing.JLabel" name="latencyAdd_JL">
               <Properties>
                 <Property name="text" type="java.lang.String" value="latencyAdd"/>
+                <Property name="toolTipText" type="java.lang.String" value="latency of add propose functional units"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="latencyAdd_JTF">
@@ -458,6 +461,7 @@
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="ConfigFile.getLatencyAdd()+&quot;&quot;" type="code"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="latency of add propose functional units"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="latencyAdd_JTFActionPerformed"/>
@@ -466,6 +470,7 @@
             <Component class="javax.swing.JLabel" name="nFUMult_JL">
               <Properties>
                 <Property name="text" type="java.lang.String" value="nFUMult"/>
+                <Property name="toolTipText" type="java.lang.String" value="number of multiply propose functional units"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="nFUMult_JTF">
@@ -473,6 +478,7 @@
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="ConfigFile.getnFUMult()+&quot;&quot;" type="code"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="number of multiply propose functional units"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nFUMult_JTFActionPerformed"/>
@@ -481,6 +487,7 @@
             <Component class="javax.swing.JLabel" name="latencyFUMult_JL">
               <Properties>
                 <Property name="text" type="java.lang.String" value="latencyFUMult"/>
+                <Property name="toolTipText" type="java.lang.String" value="latency of multiply propose functional units"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="latencyFUMult_JTF">
@@ -488,6 +495,7 @@
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="ConfigFile.getLatencyMult()+&quot;&quot;" type="code"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="latency of multiply propose functional units"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="latencyFUMult_JTFActionPerformed"/>
@@ -496,6 +504,7 @@
             <Component class="javax.swing.JLabel" name="sizeROB_JL">
               <Properties>
                 <Property name="text" type="java.lang.String" value="sizeROB"/>
+                <Property name="toolTipText" type="java.lang.String" value="size of ROB"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="sizeROB_JTF">
@@ -503,6 +512,7 @@
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="ConfigFile.getSizeROB()+&quot;&quot;" type="code"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="size of ROB"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sizeROB_JTFActionPerformed"/>
@@ -511,6 +521,7 @@
             <Component class="javax.swing.JLabel" name="retirementROB_JL">
               <Properties>
                 <Property name="text" type="java.lang.String" value="retirementROB"/>
+                <Property name="toolTipText" type="java.lang.String" value="speed of retirement of instructions in ROB"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="retirementROB_JTF">
@@ -518,6 +529,7 @@
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="ConfigFile.getRetirROB()+&quot;&quot;" type="code"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="speed of retirement of instructions in ROB"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="retirementROB_JTFActionPerformed"/>
@@ -526,11 +538,13 @@
             <Component class="javax.swing.JLabel" name="tipusPrediccio_JL">
               <Properties>
                 <Property name="text" type="java.lang.String" value="tipusPrediccio"/>
+                <Property name="toolTipText" type="java.lang.String" value="tipusPrediccio (NONTAKEN, TAKEN, ONEBIT, TWOBIT)"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JCheckBox" name="ROB_CB">
               <Properties>
                 <Property name="text" type="java.lang.String" value="ROB"/>
+                <Property name="toolTipText" type="java.lang.String" value="ROB"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ROB_CBActionPerformed"/>
@@ -539,6 +553,7 @@
             <Component class="javax.swing.JCheckBox" name="forwarding_CB">
               <Properties>
                 <Property name="text" type="java.lang.String" value="forwarding"/>
+                <Property name="toolTipText" type="java.lang.String" value="forwarding"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="forwarding_CBActionPerformed"/>
@@ -547,11 +562,13 @@
             <Component class="javax.swing.JLabel" name="SchedulerName_JL">
               <Properties>
                 <Property name="text" type="java.lang.String" value="SchedulerName"/>
+                <Property name="toolTipText" type="java.lang.String" value="name of scheduler"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JCheckBox" name="RandomFile_CB">
               <Properties>
                 <Property name="text" type="java.lang.String" value="RandomFile"/>
+                <Property name="toolTipText" type="java.lang.String" value="random file source code"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RandomFile_CBActionPerformed"/>
@@ -560,11 +577,13 @@
             <Component class="javax.swing.JLabel" name="SourcePath_JL">
               <Properties>
                 <Property name="text" type="java.lang.String" value="SourcePath"/>
+                <Property name="toolTipText" type="java.lang.String" value="source-code file"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JCheckBox" name="addressPredictor_CB">
               <Properties>
                 <Property name="text" type="java.lang.String" value="addressPredictor"/>
+                <Property name="toolTipText" type="java.lang.String" value="addressPredictor"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[102, 23]"/>
                 </Property>
@@ -584,6 +603,7 @@
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="ConfigFile.getSourcePath()" type="code"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="source-code file"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SourcePath_JTFActionPerformed"/>
@@ -599,6 +619,7 @@
                     <StringItem index="3" value="Two Bit"/>
                   </StringArray>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="tipusPrediccio (NONTAKEN, TAKEN, ONEBIT, TWOBIT)"/>
               </Properties>
               <Events>
                 <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="tipusPrediccio_ComboBoxItemStateChanged"/>
@@ -612,6 +633,7 @@
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="ConfigFile.getCommitCycles()+&quot;&quot;" type="code"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="latency of commit"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CommitCycles_JTFActionPerformed"/>
@@ -624,6 +646,7 @@
                     <StringItem index="0" value="enOrden"/>
                   </StringArray>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="name of scheduler"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SchedulerName_ComboBoxActionPerformed"/>
@@ -635,6 +658,7 @@
             <Component class="javax.swing.JLabel" name="CommitCycles_JL">
               <Properties>
                 <Property name="text" type="java.lang.String" value="CommitCycles"/>
+                <Property name="toolTipText" type="java.lang.String" value="latency of commit"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="DecodeCycles_JTF">
@@ -642,6 +666,7 @@
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="ConfigFile.getDecodeCycles()+&quot;&quot;" type="code"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="latency of decode"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DecodeCycles_JTFActionPerformed"/>
@@ -650,6 +675,7 @@
             <Component class="javax.swing.JLabel" name="DecodeCycles_JL">
               <Properties>
                 <Property name="text" type="java.lang.String" value="decodeCycles"/>
+                <Property name="toolTipText" type="java.lang.String" value="latency of decode"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="ExecuteCycles_JTF">
@@ -657,6 +683,7 @@
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="ConfigFile.getExecuteCycles()+&quot;&quot;" type="code"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="latency of execute"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ExecuteCycles_JTFActionPerformed"/>
@@ -665,6 +692,7 @@
             <Component class="javax.swing.JLabel" name="ExecuteCycles_JL">
               <Properties>
                 <Property name="text" type="java.lang.String" value="executeCycles"/>
+                <Property name="toolTipText" type="java.lang.String" value="latency of execute"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="SaveClose_BT">
@@ -675,6 +703,7 @@
             <Component class="javax.swing.JLabel" name="nBitsArchitecture_JL">
               <Properties>
                 <Property name="text" type="java.lang.String" value="nBits Architecture"/>
+                <Property name="toolTipText" type="java.lang.String" value="number of bits of the architecture"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="nBitsArchitecture_JTF">
@@ -682,6 +711,7 @@
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="ConfigFile.getnBits()+&quot;&quot;" type="code"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="number of bits of the architecture"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nBitsArchitecture_JTFActionPerformed"/>
@@ -690,6 +720,7 @@
             <Component class="javax.swing.JLabel" name="startAddress_JL">
               <Properties>
                 <Property name="text" type="java.lang.String" value="startAddress"/>
+                <Property name="toolTipText" type="java.lang.String" value="start adress of the memory"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="startAddress_JTF">
@@ -697,6 +728,7 @@
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="ConfigFile.getStartAdress()+&quot;&quot;" type="code"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="start adress of the memory"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="startAddress_JTFActionPerformed"/>
@@ -705,6 +737,7 @@
             <Component class="javax.swing.JLabel" name="finishAddress_JL">
               <Properties>
                 <Property name="text" type="java.lang.String" value="finishAddress"/>
+                <Property name="toolTipText" type="java.lang.String" value="finish adress of the memory"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="finishAddress_JTF">
@@ -712,6 +745,7 @@
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="ConfigFile.getFinishAdress()+&quot;&quot;" type="code"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="finish adress of the memory"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="finishAddress_JTFActionPerformed"/>
@@ -720,6 +754,7 @@
             <Component class="javax.swing.JLabel" name="nRegisters_JL">
               <Properties>
                 <Property name="text" type="java.lang.String" value="nRegisters"/>
+                <Property name="toolTipText" type="java.lang.String" value="number of the general propose registers"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="nRegisters_JTF">
@@ -727,6 +762,7 @@
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="ConfigFile.getnRegister()+&quot;&quot;" type="code"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="number of the general propose registers"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nRegisters_JTFActionPerformed"/>
@@ -735,6 +771,7 @@
             <Component class="javax.swing.JLabel" name="fetchCycles_JL">
               <Properties>
                 <Property name="text" type="java.lang.String" value="fetchCycles"/>
+                <Property name="toolTipText" type="java.lang.String" value="latency of fetch"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="fetchCycles_JTF">
@@ -742,6 +779,7 @@
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="ConfigFile.getFetchCycles()+&quot;&quot;" type="code"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="latency of fetch"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fetchCycles_JTFActionPerformed"/>
@@ -750,6 +788,7 @@
             <Component class="javax.swing.JLabel" name="memoryCycles_JL">
               <Properties>
                 <Property name="text" type="java.lang.String" value="memoryCycles"/>
+                <Property name="toolTipText" type="java.lang.String" value="latency of memory"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="memoryCycles_JTF2">
@@ -757,6 +796,7 @@
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="ConfigFile.getMemoryCycles()+&quot;&quot;" type="code"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="latency of memory"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="memoryCycles_JTF2ActionPerformed"/>
@@ -765,6 +805,7 @@
             <Component class="javax.swing.JLabel" name="writeCycles_JL">
               <Properties>
                 <Property name="text" type="java.lang.String" value="writeCycles"/>
+                <Property name="toolTipText" type="java.lang.String" value="latency of write"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="writeCycles_JTF3">
@@ -772,6 +813,7 @@
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="ConfigFile.getWriteCycles()+&quot;&quot;" type="code"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="latency of write"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="writeCycles_JTF3ActionPerformed"/>
@@ -780,6 +822,7 @@
             <Component class="javax.swing.JLabel" name="scalable_JL">
               <Properties>
                 <Property name="text" type="java.lang.String" value="scalable"/>
+                <Property name="toolTipText" type="java.lang.String" value="system scalability"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="scalable_JTF">
@@ -787,6 +830,7 @@
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="ConfigFile.getScalability()+&quot;&quot;" type="code"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="system scalability"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="scalable_JTFActionPerformed"/>
@@ -795,7 +839,7 @@
             <Component class="javax.swing.JLabel" name="nFUGeneric_JL">
               <Properties>
                 <Property name="text" type="java.lang.String" value="nFUGeneric"/>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
+                <Property name="toolTipText" type="java.lang.String" value="number of general propose functional units"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="nFUGeneric_JTF">
@@ -803,6 +847,7 @@
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="ConfigFile.getnFUGeneric()+&quot;&quot;" type="code"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="number of general propose functional units"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nFUGeneric_JTFActionPerformed"/>
@@ -811,6 +856,7 @@
             <Component class="javax.swing.JLabel" name="latencyGeneric_JL">
               <Properties>
                 <Property name="text" type="java.lang.String" value="latencyGeneric"/>
+                <Property name="toolTipText" type="java.lang.String" value="latency of general propose functional units"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="LatencyGeneric_JTF">
@@ -818,6 +864,7 @@
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                   <Connection code="ConfigFile.getLatencyGeneric()+&quot;&quot;" type="code"/>
                 </Property>
+                <Property name="toolTipText" type="java.lang.String" value="latency of general propose functional units"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LatencyGeneric_JTFActionPerformed"/>
