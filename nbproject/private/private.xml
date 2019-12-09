@@ -17,12 +17,10 @@
             <file>file:/Users/Izar/NetBeansProjects/CompArch_MIPS/src/architecture/Architecture.java</file>
         </group>
         <group>
-            <file>file:/Users/lumalisan/Downloads/LGMIPS/src/architecture/SourceFile.java</file>
-            <file>file:/Users/lumalisan/Downloads/LGMIPS/src/architecture/Pipeline.java</file>
-            <file>file:/Users/lumalisan/Downloads/LGMIPS/src/architecture/Operations.java</file>
-            <file>file:/Users/lumalisan/Downloads/LGMIPS/src/gui/gui2.java</file>
-            <file>file:/Users/lumalisan/Downloads/LGMIPS/src/main/LGMIPSV2.java</file>
-            <file>file:/Users/lumalisan/Downloads/LGMIPS/src/gui/guig.java</file>
+            <file>file:/Users/lisandrorocha/OneDrive%20-%20Universitat%20de%20les%20Illes%20Balears/3º/ArquitecturaComputadores/LGMIPS/src/main/LGMIPSV2.java</file>
+            <file>file:/Users/lisandrorocha/OneDrive%20-%20Universitat%20de%20les%20Illes%20Balears/3º/ArquitecturaComputadores/LGMIPS/src/architecture/BranchManager.java</file>
+            <file>file:/Users/lisandrorocha/OneDrive%20-%20Universitat%20de%20les%20Illes%20Balears/3º/ArquitecturaComputadores/LGMIPS/src/gui/NewJFrame.java</file>
+            <file>file:/Users/lisandrorocha/OneDrive%20-%20Universitat%20de%20les%20Illes%20Balears/3º/ArquitecturaComputadores/LGMIPS/src/architecture/Architecture.java</file>
         </group>
     </open-files>
 </project-private>
