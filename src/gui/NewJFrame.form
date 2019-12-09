@@ -697,7 +697,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="SaveClose_BT">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Save &amp; Close"/>
+                <Property name="text" type="java.lang.String" value="Save"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SaveClose_BTActionPerformed"/>

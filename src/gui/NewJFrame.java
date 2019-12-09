@@ -342,7 +342,7 @@ public class NewJFrame extends javax.swing.JFrame {
         ExecuteCycles_JL.setText("executeCycles");
         ExecuteCycles_JL.setToolTipText("latency of execute");
 
-        SaveClose_BT.setText("Save & Close");
+        SaveClose_BT.setText("Save");
         SaveClose_BT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SaveClose_BTActionPerformed(evt);
