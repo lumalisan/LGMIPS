@@ -176,8 +176,10 @@ public class NewJFrame extends javax.swing.JFrame {
         jTabbedPane1.addTab("MIPS", jPanel1);
 
         nFUAdd_JL.setText("nFUAdd");
+        nFUAdd_JL.setToolTipText("number of add propose functional units");
 
         nFUAdd_JTF.setText(ConfigFile.getnFUAdd()+"");
+        nFUAdd_JTF.setToolTipText("number of add propose functional units");
         nFUAdd_JTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nFUAdd_JTFActionPerformed(evt);
@@ -185,8 +187,10 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         latencyAdd_JL.setText("latencyAdd");
+        latencyAdd_JL.setToolTipText("latency of add propose functional units");
 
         latencyAdd_JTF.setText(ConfigFile.getLatencyAdd()+"");
+        latencyAdd_JTF.setToolTipText("latency of add propose functional units");
         latencyAdd_JTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 latencyAdd_JTFActionPerformed(evt);
@@ -194,8 +198,10 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         nFUMult_JL.setText("nFUMult");
+        nFUMult_JL.setToolTipText("number of multiply propose functional units");
 
         nFUMult_JTF.setText(ConfigFile.getnFUMult()+"");
+        nFUMult_JTF.setToolTipText("number of multiply propose functional units");
         nFUMult_JTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nFUMult_JTFActionPerformed(evt);
@@ -203,8 +209,10 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         latencyFUMult_JL.setText("latencyFUMult");
+        latencyFUMult_JL.setToolTipText("latency of multiply propose functional units");
 
         latencyFUMult_JTF.setText(ConfigFile.getLatencyMult()+"");
+        latencyFUMult_JTF.setToolTipText("latency of multiply propose functional units");
         latencyFUMult_JTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 latencyFUMult_JTFActionPerformed(evt);
@@ -212,8 +220,10 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         sizeROB_JL.setText("sizeROB");
+        sizeROB_JL.setToolTipText("size of ROB");
 
         sizeROB_JTF.setText(ConfigFile.getSizeROB()+"");
+        sizeROB_JTF.setToolTipText("size of ROB");
         sizeROB_JTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sizeROB_JTFActionPerformed(evt);
@@ -221,8 +231,10 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         retirementROB_JL.setText("retirementROB");
+        retirementROB_JL.setToolTipText("speed of retirement of instructions in ROB");
 
         retirementROB_JTF.setText(ConfigFile.getRetirROB()+"");
+        retirementROB_JTF.setToolTipText("speed of retirement of instructions in ROB");
         retirementROB_JTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 retirementROB_JTFActionPerformed(evt);
@@ -230,8 +242,10 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         tipusPrediccio_JL.setText("tipusPrediccio");
+        tipusPrediccio_JL.setToolTipText("tipusPrediccio (NONTAKEN, TAKEN, ONEBIT, TWOBIT)");
 
         ROB_CB.setText("ROB");
+        ROB_CB.setToolTipText("ROB");
         ROB_CB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ROB_CBActionPerformed(evt);
@@ -239,6 +253,7 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         forwarding_CB.setText("forwarding");
+        forwarding_CB.setToolTipText("forwarding");
         forwarding_CB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 forwarding_CBActionPerformed(evt);
@@ -246,8 +261,10 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         SchedulerName_JL.setText("SchedulerName");
+        SchedulerName_JL.setToolTipText("name of scheduler");
 
         RandomFile_CB.setText("RandomFile");
+        RandomFile_CB.setToolTipText("random file source code");
         RandomFile_CB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RandomFile_CBActionPerformed(evt);
@@ -255,8 +272,10 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         SourcePath_JL.setText("SourcePath");
+        SourcePath_JL.setToolTipText("source-code file");
 
         addressPredictor_CB.setText("addressPredictor");
+        addressPredictor_CB.setToolTipText("addressPredictor");
         addressPredictor_CB.setMaximumSize(new java.awt.Dimension(102, 23));
         addressPredictor_CB.setMinimumSize(new java.awt.Dimension(102, 23));
         addressPredictor_CB.setPreferredSize(new java.awt.Dimension(102, 23));
@@ -267,6 +286,7 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         SourcePath_JTF.setText(ConfigFile.getSourcePath());
+        SourcePath_JTF.setToolTipText("source-code file");
         SourcePath_JTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SourcePath_JTFActionPerformed(evt);
@@ -274,6 +294,7 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         tipusPrediccio_ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Not Taken", "Taken", "One Bit", "Two Bit" }));
+        tipusPrediccio_ComboBox.setToolTipText("tipusPrediccio (NONTAKEN, TAKEN, ONEBIT, TWOBIT)");
         tipusPrediccio_ComboBox.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 tipusPrediccio_ComboBoxItemStateChanged(evt);
@@ -281,6 +302,7 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         CommitCycles_JTF.setText(ConfigFile.getCommitCycles()+"");
+        CommitCycles_JTF.setToolTipText("latency of commit");
         CommitCycles_JTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CommitCycles_JTFActionPerformed(evt);
@@ -288,6 +310,7 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         SchedulerName_ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "enOrden" }));
+        SchedulerName_ComboBox.setToolTipText("name of scheduler");
         SchedulerName_ComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SchedulerName_ComboBoxActionPerformed(evt);
@@ -295,8 +318,10 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         CommitCycles_JL.setText("CommitCycles");
+        CommitCycles_JL.setToolTipText("latency of commit");
 
         DecodeCycles_JTF.setText(ConfigFile.getDecodeCycles()+"");
+        DecodeCycles_JTF.setToolTipText("latency of decode");
         DecodeCycles_JTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DecodeCycles_JTFActionPerformed(evt);
@@ -304,8 +329,10 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         DecodeCycles_JL.setText("decodeCycles");
+        DecodeCycles_JL.setToolTipText("latency of decode");
 
         ExecuteCycles_JTF.setText(ConfigFile.getExecuteCycles()+"");
+        ExecuteCycles_JTF.setToolTipText("latency of execute");
         ExecuteCycles_JTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ExecuteCycles_JTFActionPerformed(evt);
@@ -313,12 +340,15 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         ExecuteCycles_JL.setText("executeCycles");
+        ExecuteCycles_JL.setToolTipText("latency of execute");
 
         SaveClose_BT.setText("Save & Close");
 
         nBitsArchitecture_JL.setText("nBits Architecture");
+        nBitsArchitecture_JL.setToolTipText("number of bits of the architecture");
 
         nBitsArchitecture_JTF.setText(ConfigFile.getnBits()+"");
+        nBitsArchitecture_JTF.setToolTipText("number of bits of the architecture");
         nBitsArchitecture_JTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nBitsArchitecture_JTFActionPerformed(evt);
@@ -326,8 +356,10 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         startAddress_JL.setText("startAddress");
+        startAddress_JL.setToolTipText("start adress of the memory");
 
         startAddress_JTF.setText(ConfigFile.getStartAdress()+"");
+        startAddress_JTF.setToolTipText("start adress of the memory");
         startAddress_JTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 startAddress_JTFActionPerformed(evt);
@@ -335,8 +367,10 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         finishAddress_JL.setText("finishAddress");
+        finishAddress_JL.setToolTipText("finish adress of the memory");
 
         finishAddress_JTF.setText(ConfigFile.getFinishAdress()+"");
+        finishAddress_JTF.setToolTipText("finish adress of the memory");
         finishAddress_JTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 finishAddress_JTFActionPerformed(evt);
@@ -344,8 +378,10 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         nRegisters_JL.setText("nRegisters");
+        nRegisters_JL.setToolTipText("number of the general propose registers");
 
         nRegisters_JTF.setText(ConfigFile.getnRegister()+"");
+        nRegisters_JTF.setToolTipText("number of the general propose registers");
         nRegisters_JTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nRegisters_JTFActionPerformed(evt);
@@ -353,8 +389,10 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         fetchCycles_JL.setText("fetchCycles");
+        fetchCycles_JL.setToolTipText("latency of fetch");
 
         fetchCycles_JTF.setText(ConfigFile.getFetchCycles()+"");
+        fetchCycles_JTF.setToolTipText("latency of fetch");
         fetchCycles_JTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fetchCycles_JTFActionPerformed(evt);
@@ -362,8 +400,10 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         memoryCycles_JL.setText("memoryCycles");
+        memoryCycles_JL.setToolTipText("latency of memory");
 
         memoryCycles_JTF2.setText(ConfigFile.getMemoryCycles()+"");
+        memoryCycles_JTF2.setToolTipText("latency of memory");
         memoryCycles_JTF2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 memoryCycles_JTF2ActionPerformed(evt);
@@ -371,8 +411,10 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         writeCycles_JL.setText("writeCycles");
+        writeCycles_JL.setToolTipText("latency of write");
 
         writeCycles_JTF3.setText(ConfigFile.getWriteCycles()+"");
+        writeCycles_JTF3.setToolTipText("latency of write");
         writeCycles_JTF3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 writeCycles_JTF3ActionPerformed(evt);
@@ -380,8 +422,10 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         scalable_JL.setText("scalable");
+        scalable_JL.setToolTipText("system scalability");
 
         scalable_JTF.setText(ConfigFile.getScalability()+"");
+        scalable_JTF.setToolTipText("system scalability");
         scalable_JTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 scalable_JTFActionPerformed(evt);
@@ -389,9 +433,10 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         nFUGeneric_JL.setText("nFUGeneric");
-        nFUGeneric_JL.setToolTipText("");
+        nFUGeneric_JL.setToolTipText("number of general propose functional units");
 
         nFUGeneric_JTF.setText(ConfigFile.getnFUGeneric()+"");
+        nFUGeneric_JTF.setToolTipText("number of general propose functional units");
         nFUGeneric_JTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nFUGeneric_JTFActionPerformed(evt);
@@ -399,8 +444,10 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         latencyGeneric_JL.setText("latencyGeneric");
+        latencyGeneric_JL.setToolTipText("latency of general propose functional units");
 
         LatencyGeneric_JTF.setText(ConfigFile.getLatencyGeneric()+"");
+        LatencyGeneric_JTF.setToolTipText("latency of general propose functional units");
         LatencyGeneric_JTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LatencyGeneric_JTFActionPerformed(evt);
@@ -505,9 +552,9 @@ public class NewJFrame extends javax.swing.JFrame {
                                         .addComponent(nFUAdd_JL)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(nFUAdd_JTF, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 2, Short.MAX_VALUE))
+                                .addGap(0, 34, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(SaveClose_BT)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -522,7 +569,7 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(forwarding_CB)
                             .addComponent(ROB_CB, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
