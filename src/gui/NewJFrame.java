@@ -7,7 +7,6 @@ package gui;
 
 import files.ConfigFile;
 import java.io.IOException;
-import static java.lang.System.exit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
@@ -22,7 +21,15 @@ public class NewJFrame extends javax.swing.JFrame {
     /**
      * Creates new form NewJFrame
      */
+    private files.ConfigFile config = null;
+    
     public NewJFrame() {
+        try {
+            config = new files.ConfigFile("config.properties");
+            config.loadConfig();
+        } catch (IOException ex) {
+            Logger.getLogger(ConfigFile.class.getName()).log(Level.SEVERE, null, ex);
+        }
         initComponents();
     }
 
