@@ -300,112 +300,118 @@ public class ConfigFile {
         this.input = input;
     }
 
-    public static void setSourcePath(String sourcePath) {
-        ConfigFile.sourcePath = sourcePath;
+    public void setSourcePath(String sourcePath) {
+        prop.setProperty("sourcePath", sourcePath+"");
     }
 
-    public static void setRandomFile(String randomFile) {
-        ConfigFile.randomFile = randomFile;
+    public void setRandomFile(String randomFile) {
+        prop.setProperty("randomFile", randomFile+"");
     }
 
-    public static void setnBits(int nBits) {
-        ConfigFile.nBits = nBits;
+    public void setnBits(int nBits) {
+        prop.setProperty("nBits", nBits+"");
     }
 
-    public static void setStartAdress(int startAdress) {
-        ConfigFile.startAdress = startAdress;
+    public void setStartAdress(int startAdress) {
+        prop.setProperty("startAdress", startAdress+"");
     }
 
-    public static void setFinishAdress(int finishAdress) {
-        ConfigFile.finishAdress = finishAdress;
+    public void setFinishAdress(int finishAdress) {
+        prop.setProperty("finishAdress", finishAdress+"");
     }
 
-    public static void setnRegister(int nRegister) {
-        ConfigFile.nRegister = nRegister;
+    public void setnRegister(int nRegister) {
+        prop.setProperty("nRegister", nRegister+"");
     }
 
-    public static void setFetchCycles(int fetchCycles) {
-        ConfigFile.fetchCycles = fetchCycles;
+    public void setFetchCycles(int fetchCycles) {
+        prop.setProperty("fetchCycles", fetchCycles+"");
     }
 
-    public static void setDecodeCycles(int decodeCycles) {
-        ConfigFile.decodeCycles = decodeCycles;
+    public void setDecodeCycles(int decodeCycles) {
+        prop.setProperty("decodeCycles", decodeCycles+"");
     }
 
-    public static void setExecuteCycles(int executeCycles) {
-        ConfigFile.executeCycles = executeCycles;
+    public void setExecuteCycles(int executeCycles) {
+        prop.setProperty("executeCycles", executeCycles+"");
     }
 
-    public static void setMemoryCycles(int memoryCycles) {
-        ConfigFile.memoryCycles = memoryCycles;
+    public void setMemoryCycles(int memoryCycles) {
+        prop.setProperty("memoryCycles", memoryCycles+"");
     }
 
-    public static void setWriteCycles(int writeCycles) {
-        ConfigFile.writeCycles = writeCycles;
+    public void setWriteCycles(int writeCycles) {
+        prop.setProperty("writeCycles", writeCycles+"");
     }
 
-    public static void setCommitCycles(int commitCycles) {
-        ConfigFile.commitCycles = commitCycles;
+    public void setCommitCycles(int commitCycles) {
+        prop.setProperty("commitCycles", commitCycles+"");
     }
 
-    public static void setSchedulerName(String schedulerName) {
-        ConfigFile.schedulerName = schedulerName;
+    public void setSchedulerName(String schedulerName) {
+        prop.setProperty("schedulerName", schedulerName+"");
     }
 
-    public static void setnRenameRegister(int nRenameRegister) {
-        ConfigFile.nRenameRegister = nRenameRegister;
+    public void setnRenameRegister(int nRenameRegister) {
+        prop.setProperty("nRenameRegister", nRenameRegister+"");
     }
 
-    public static void setScalability(int scalability) {
-        ConfigFile.scalability = scalability;
+    public void setScalability(int scalability) {
+        prop.setProperty("scalability", scalability+"");
     }
 
-    public static void setSizeROB(int sizeROB) {
-        ConfigFile.sizeROB = sizeROB;
+    public void setSizeROB(int sizeROB) {
+        prop.setProperty("sizeROB", sizeROB+"");
     }
 
-    public static void setnFUGeneric(int nFUGeneric) {
-        ConfigFile.nFUGeneric = nFUGeneric;
+    public void setnFUGeneric(int nFUGeneric) {
+        prop.setProperty("nFUGeneric", nFUGeneric+"");
     }
 
-    public static void setnFUAdd(int nFUAdd) {
-        ConfigFile.nFUAdd = nFUAdd;
+    public void setnFUAdd(int nFUAdd) {
+        prop.setProperty("nFUAdd", nFUAdd+"");
     }
 
-    public static void setnFUMult(int nFUMult) {
-        ConfigFile.nFUMult = nFUMult;
+    public void setnFUMult(int nFUMult) {
+        prop.setProperty("nFUMult", nFUMult+"");
     }
 
-    public static void setLatencyGeneric(int latencyGeneric) {
-        ConfigFile.latencyGeneric = latencyGeneric;
+    public void setLatencyGeneric(int latencyGeneric) {
+        prop.setProperty("latencyGeneric", latencyGeneric+"");
     }
 
-    public static void setLatencyAdd(int latencyAdd) {
-        ConfigFile.latencyAdd = latencyAdd;
+    public void setLatencyAdd(int latencyAdd) {
+        prop.setProperty("latencyAdd", latencyAdd+"");
     }
 
-    public static void setLatencyMult(int latencyMult) {
-        ConfigFile.latencyMult = latencyMult;
+    public void setLatencyMult(int latencyMult) {
+        prop.setProperty("latencyMult", latencyMult+"");
     }
 
-    public static void setRetirROB(int retirROB) {
-        ConfigFile.retirROB = retirROB;
+    public void setRetirROB(int retirROB) {
+        prop.setProperty("retirROB", retirROB+"");
     }
 
-    public static void setROB(String ROB) {
-        ConfigFile.ROB = ROB;
+    public void setROB(String ROB) {
+        prop.setProperty("ROB", ROB+"");
     }
 
-    public static void setTipusPrediccio(Pipeline.predictionType tipusPrediccio) {
-        ConfigFile.tipusPrediccio = tipusPrediccio;
+    public void setTipusPrediccio(Pipeline.predictionType tipusPrediccio) {
+        prop.setProperty("tipusPrediccio", tipusPrediccio.toString()+"");
     }
 
-    public static void setAddressPredictor(boolean addressPredictor) {
-        ConfigFile.addressPredictor = addressPredictor;
+    public void setAddressPredictor(boolean addressPredictor) {
+        if (addressPredictor)
+            prop.setProperty("addressPredictor", "true");
+        else
+            prop.setProperty("addressPredictor", "false");
     }
 
-    public static void setForwarding(boolean forwarding) {
-        ConfigFile.forwarding = forwarding;
+    public void setForwarding(boolean forwarding) {
+        if (forwarding)
+            prop.setProperty("forwarding", "true");
+        else
+            prop.setProperty("forwarding", "false");
     }
 
     public void updateConfigFile() {
