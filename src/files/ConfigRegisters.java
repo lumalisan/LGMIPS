@@ -41,7 +41,7 @@ public final class ConfigRegisters {
     public void loadConfig() {
         for (int i = 0; i < nRegister; i++) {
             configReg.add(Integer.parseInt(prop.getProperty("r" + i)));
-        }       
+        }
     }
 
     public void checkRegNumber() throws IOException {
@@ -52,32 +52,44 @@ public final class ConfigRegisters {
         return nRegister;
     }
 
+    public int getRegistersNumber() {
+        return prop.size();
+    }
+    
+    public int getRegister(int i) {
+        this.loadConfig();
+        if (configReg.size() >= i)
+            return configReg.get(i);
+        else
+            return -1;
+    }
+
     public ArrayList<Integer> getConfigReg() {
         return configReg;
     }
-    
+
     public void setRegister(int nReg, int regValue) throws FileNotFoundException, IOException {
         if (nReg > nRegister) {
             for (int i = nRegister; i < nReg; i++) {
                 prop.put("r" + i, 0 + "");  // Añado registros vacíos hasta llegar al registro que queremos añadir
             }
             prop.put("r" + nReg, regValue + "");
-            
+
         } else {
             prop.setProperty("r" + nReg, regValue + "");  // Si ya existe, actualizo el valor
         }
-        
+
         System.out.println("DEBUG - prop list");
         prop.list(System.out);
-        
-        // Escribimos los cambios 
+
+        // Escribimos los cambios
         output = new FileOutputStream(path);
         prop.store(output, path);
-        
+
         // Recargamos el arrayList de registros
         configReg.clear();
         prop.load(input);
-        checkRegNumber();        
+        checkRegNumber();
         loadConfig();
         checkRegNumber();
 
