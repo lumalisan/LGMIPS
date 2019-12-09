@@ -357,7 +357,7 @@ public class ConfigFile {
     }
 
     public void setScalability(int scalability) {
-        prop.setProperty("scalability", scalability+"");
+        prop.setProperty("scalable", scalability+"");
     }
 
     public void setSizeROB(int sizeROB) {
@@ -389,7 +389,7 @@ public class ConfigFile {
     }
 
     public void setRetirROB(int retirROB) {
-        prop.setProperty("retirROB", retirROB+"");
+        prop.setProperty("retirementROB", retirROB+"");
     }
 
     public void setROB(String ROB) {

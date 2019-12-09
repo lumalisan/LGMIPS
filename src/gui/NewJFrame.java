@@ -343,6 +343,11 @@ public class NewJFrame extends javax.swing.JFrame {
         ExecuteCycles_JL.setToolTipText("latency of execute");
 
         SaveClose_BT.setText("Save & Close");
+        SaveClose_BT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveClose_BTActionPerformed(evt);
+            }
+        });
 
         nBitsArchitecture_JL.setText("nBits Architecture");
         nBitsArchitecture_JL.setToolTipText("number of bits of the architecture");
@@ -889,6 +894,33 @@ public class NewJFrame extends javax.swing.JFrame {
         if (selected != -1)
         model.removeRow(selected);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void SaveClose_BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveClose_BTActionPerformed
+        // TODO add your handling code here:
+        config.setSourcePath(SourcePath_JTF.getText());
+        config.setnFUAdd(Integer.parseInt(nFUAdd_JTF.getText()));
+        config.setLatencyAdd(Integer.parseInt(latencyAdd_JTF.getText()));
+        config.setnFUMult(Integer.parseInt(nFUMult_JTF.getText()));
+        config.setLatencyMult(Integer.parseInt(latencyFUMult_JTF.getText()));
+        config.setSizeROB(Integer.parseInt(sizeROB_JTF.getText()));
+        config.setRetirROB(Integer.parseInt(retirementROB_JTF.getText()));
+        config.setCommitCycles(Integer.parseInt(CommitCycles_JTF.getText()));
+        config.setDecodeCycles(Integer.parseInt(DecodeCycles_JTF.getText()));
+        config.setExecuteCycles(Integer.parseInt(ExecuteCycles_JTF.getText()));
+        config.setnBits(Integer.parseInt(nBitsArchitecture_JTF.getText()));
+        config.setStartAdress(Integer.parseInt(startAddress_JTF.getText()));
+        config.setFinishAdress(Integer.parseInt(finishAddress_JTF.getText()));
+        config.setnRegister(Integer.parseInt(nRegisters_JTF.getText()));
+        config.setFetchCycles(Integer.parseInt(fetchCycles_JTF.getText()));
+        config.setMemoryCycles(Integer.parseInt(memoryCycles_JTF2.getText()));
+        config.setWriteCycles(Integer.parseInt(writeCycles_JTF3.getText()));
+        config.setScalability(Integer.parseInt(scalable_JTF.getText()));
+        config.setnFUGeneric(Integer.parseInt(nFUGeneric_JTF.getText()));
+        config.setLatencyGeneric(Integer.parseInt(LatencyGeneric_JTF.getText()));
+        config.updateConfigFile();
+    }//GEN-LAST:event_SaveClose_BTActionPerformed
+
+                                           
 
     /**
      * @param args the command line arguments
