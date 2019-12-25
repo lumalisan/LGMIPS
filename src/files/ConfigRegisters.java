@@ -1,5 +1,4 @@
 //TFG 2013-2014
-
 package files;
 
 import java.io.FileInputStream;
@@ -10,6 +9,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Properties;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -55,13 +55,14 @@ public final class ConfigRegisters {
     public int getRegistersNumber() {
         return prop.size();
     }
-    
+
     public int getRegister(int i) {
         this.loadConfig();
-        if (configReg.size() >= i)
+        if (configReg.size() >= i) {
             return configReg.get(i);
-        else
+        } else {
             return -1;
+        }
     }
 
     public ArrayList<Integer> getConfigReg() {
@@ -92,6 +93,31 @@ public final class ConfigRegisters {
         checkRegNumber();
         loadConfig();
         checkRegNumber();
+    }
+
+    public static void updateRegisters(Vector table) {
+
+        FileOutputStream out = null;
+        try {
+            Properties prop_new = new Properties();
+            for (int i = 0; i < table.size(); i++) {
+                Vector reg = (Vector) table.elementAt(i);
+                prop_new.put(reg.get(0).toString(), reg.get(1).toString());
+            }
+            
+            out = new FileOutputStream(path);
+            prop_new.store(out, path);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(ConfigRegisters.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(ConfigRegisters.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                out.close();
+            } catch (IOException ex) {
+                Logger.getLogger(ConfigRegisters.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
 
     }
 

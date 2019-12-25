@@ -6,7 +6,9 @@
 package gui;
 
 import files.ConfigFile;
+import files.ConfigRegisters;
 import java.io.IOException;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
@@ -124,8 +126,10 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/XD.jpeg"))); // NOI18N
         jLabel1.setToolTipText("");
+        jLabel1.setAlignmentY(0.0F);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -718,6 +722,11 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         jButton5.setText("Save Config");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -884,7 +893,10 @@ public class NewJFrame extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         DefaultTableModel model = (DefaultTableModel) this.jTable1.getModel();
-        model.addRow(new Object[]{"Registro N", "Valor"});
+        model.addRow(new Object[]{"r"+model.getRowCount(), "0"});
+        // Evidencia la última linea añadida
+        this.jTable1.setRowSelectionInterval(model.getRowCount()-1, model.getRowCount()-1);
+        this.jTable1.scrollRectToVisible(this.jTable1.getCellRect(model.getRowCount()-1,0, true));
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -919,6 +931,13 @@ public class NewJFrame extends javax.swing.JFrame {
         config.setLatencyGeneric(Integer.parseInt(LatencyGeneric_JTF.getText()));
         config.updateConfigFile();
     }//GEN-LAST:event_SaveClose_BTActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // Botón de guardado en panel de registros
+        DefaultTableModel model = (DefaultTableModel) this.jTable1.getModel();
+        ConfigRegisters.updateRegisters(model.getDataVector());
+        System.out.println("Registros actualizados.");
+    }//GEN-LAST:event_jButton5ActionPerformed
 
                                            
 
