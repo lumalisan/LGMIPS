@@ -80,8 +80,8 @@ public final class ConfigRegisters {
             prop.setProperty("r" + nReg, regValue + "");  // Si ya existe, actualizo el valor
         }
 
-        System.out.println("DEBUG - prop list");
-        prop.list(System.out);
+        //System.out.println("DEBUG - prop list");
+        //prop.list(System.out);
 
         // Escribimos los cambios
         output = new FileOutputStream(path);

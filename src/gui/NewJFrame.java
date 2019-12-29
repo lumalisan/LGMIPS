@@ -5,10 +5,11 @@
  */
 package gui;
 
+import architecture.Pipeline;
 import files.ConfigFile;
 import files.ConfigRegisters;
 import java.io.IOException;
-import java.util.Vector;
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
@@ -250,6 +251,12 @@ public class NewJFrame extends javax.swing.JFrame {
 
         ROB_CB.setText("ROB");
         ROB_CB.setToolTipText("ROB");
+        ROB_CB.setSelected(ConfigFile.getROB());
+        ROB_CB.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                ROB_CBItemStateChanged(evt);
+            }
+        });
         ROB_CB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ROB_CBActionPerformed(evt);
@@ -258,6 +265,12 @@ public class NewJFrame extends javax.swing.JFrame {
 
         forwarding_CB.setText("forwarding");
         forwarding_CB.setToolTipText("forwarding");
+        forwarding_CB.setSelected(ConfigFile.hasForwarding());
+        forwarding_CB.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                forwarding_CBItemStateChanged(evt);
+            }
+        });
         forwarding_CB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 forwarding_CBActionPerformed(evt);
@@ -269,6 +282,12 @@ public class NewJFrame extends javax.swing.JFrame {
 
         RandomFile_CB.setText("RandomFile");
         RandomFile_CB.setToolTipText("random file source code");
+        RandomFile_CB.setSelected(ConfigFile.getRandomFile());
+        RandomFile_CB.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                RandomFile_CBItemStateChanged(evt);
+            }
+        });
         RandomFile_CB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RandomFile_CBActionPerformed(evt);
@@ -280,9 +299,15 @@ public class NewJFrame extends javax.swing.JFrame {
 
         addressPredictor_CB.setText("addressPredictor");
         addressPredictor_CB.setToolTipText("addressPredictor");
+        addressPredictor_CB.setSelected(ConfigFile.isAddressPredictor());
         addressPredictor_CB.setMaximumSize(new java.awt.Dimension(102, 23));
         addressPredictor_CB.setMinimumSize(new java.awt.Dimension(102, 23));
         addressPredictor_CB.setPreferredSize(new java.awt.Dimension(102, 23));
+        addressPredictor_CB.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                addressPredictor_CBItemStateChanged(evt);
+            }
+        });
         addressPredictor_CB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addressPredictor_CBActionPerformed(evt);
@@ -299,6 +324,8 @@ public class NewJFrame extends javax.swing.JFrame {
 
         tipusPrediccio_ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Not Taken", "Taken", "One Bit", "Two Bit" }));
         tipusPrediccio_ComboBox.setToolTipText("tipusPrediccio (NONTAKEN, TAKEN, ONEBIT, TWOBIT)");
+        String[] types = {"NONTAKEN","TAKEN","ONEBIT","TWOBIT"};
+        tipusPrediccio_ComboBox.setSelectedIndex(Arrays.asList(types).indexOf(ConfigFile.getTipusPrediccio().toString()));
         tipusPrediccio_ComboBox.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 tipusPrediccio_ComboBoxItemStateChanged(evt);
@@ -313,8 +340,11 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
-        SchedulerName_ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "enOrden" }));
+        SchedulerName_ComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "order" }));
         SchedulerName_ComboBox.setToolTipText("name of scheduler");
+        String[] types_sc = {"order"};
+        System.out.println("DEBUG - schedName: " + ConfigFile.getSchedulerName());
+        SchedulerName_ComboBox.setSelectedIndex(Arrays.asList(types_sc).indexOf(ConfigFile.getSchedulerName()));
         SchedulerName_ComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SchedulerName_ComboBoxActionPerformed(evt);
@@ -389,7 +419,14 @@ public class NewJFrame extends javax.swing.JFrame {
         nRegisters_JL.setText("nRegisters");
         nRegisters_JL.setToolTipText("number of the general propose registers");
 
-        nRegisters_JTF.setText(ConfigFile.getnRegister()+"");
+        // Cojo el num de registros desde el fichero de registros
+        int numregs = -1;
+        try {
+            numregs = new ConfigRegisters().getRegistersNumber();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        nRegisters_JTF.setText(numregs+"");
         nRegisters_JTF.setToolTipText("number of the general propose registers");
         nRegisters_JTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -929,6 +966,42 @@ public class NewJFrame extends javax.swing.JFrame {
         config.setScalability(Integer.parseInt(scalable_JTF.getText()));
         config.setnFUGeneric(Integer.parseInt(nFUGeneric_JTF.getText()));
         config.setLatencyGeneric(Integer.parseInt(LatencyGeneric_JTF.getText()));
+        
+        config.setRandomFile(RandomFile_CB.isSelected());
+        config.setROB(ROB_CB.isSelected());
+        config.setAddressPredictor(addressPredictor_CB.isSelected());
+        config.setForwarding(forwarding_CB.isSelected());
+        
+        config.setSchedulerName(SchedulerName_ComboBox.getSelectedItem().toString());
+        
+        String predType = tipusPrediccio_ComboBox.getSelectedItem().toString();
+        boolean predType_selected = false;
+        
+        if (predType.equals("Taken")) {
+            config.setTipusPrediccio(Pipeline.predictionType.TAKEN);
+            predType_selected = true;
+        } 
+        if (predType.equals("Not Taken")) {
+            config.setTipusPrediccio(Pipeline.predictionType.NONTAKEN);
+            predType_selected = true;
+        } 
+        if (predType.equals("One Bit")) {
+            config.setTipusPrediccio(Pipeline.predictionType.ONEBIT);
+            predType_selected = true;
+        } 
+        if (predType.equals("Two Bit")) {
+            config.setTipusPrediccio(Pipeline.predictionType.TWOBIT);
+            predType_selected = true;
+        } 
+        
+        // Si no se ha cumplido ninguno de los casos por alguna razón, ponla como TAKEN
+        if (!predType_selected) {
+            config.setTipusPrediccio(Pipeline.predictionType.TAKEN);
+            System.out.println("DEBUG - GUI Error, no prediction type detected, setting default value TAKEN");
+        } 
+        
+        config.setnRenameRegister(16);
+                    
         config.updateConfigFile();
     }//GEN-LAST:event_SaveClose_BTActionPerformed
 
@@ -938,6 +1011,26 @@ public class NewJFrame extends javax.swing.JFrame {
         ConfigRegisters.updateRegisters(model.getDataVector());
         System.out.println("Registros actualizados.");
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void RandomFile_CBItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_RandomFile_CBItemStateChanged
+        boolean state = evt.getStateChange()==1 ? true:false;
+        config.setRandomFile(state);
+    }//GEN-LAST:event_RandomFile_CBItemStateChanged
+
+    private void ROB_CBItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ROB_CBItemStateChanged
+        boolean state = evt.getStateChange()==1 ? true:false;
+        config.setROB(state);
+    }//GEN-LAST:event_ROB_CBItemStateChanged
+
+    private void addressPredictor_CBItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_addressPredictor_CBItemStateChanged
+        boolean state = evt.getStateChange()==1 ? true:false;
+        config.setAddressPredictor(state);
+    }//GEN-LAST:event_addressPredictor_CBItemStateChanged
+
+    private void forwarding_CBItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_forwarding_CBItemStateChanged
+        boolean state = evt.getStateChange()==1 ? true:false;
+        config.setForwarding(state);
+    }//GEN-LAST:event_forwarding_CBItemStateChanged
 
                                            
 

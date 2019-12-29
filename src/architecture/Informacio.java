@@ -9,6 +9,8 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 
@@ -107,7 +109,10 @@ public class Informacio {
             }
         }
         
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(new File("out.txt")))) {
+        String filename = "out_" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("ddMMuu_HHmmss")) + ".txt";
+        System.out.println("DEBUG - Filename: " + filename);
+        
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(new File(filename)))) {
             bw.append("================== RESULTATS ==================");
             bw.append("\r\n");
             bw.append("Branchs taken: "+nBranchsTaken+"\r\n");

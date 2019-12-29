@@ -549,8 +549,12 @@
                 <Property name="toolTipText" type="java.lang.String" value="ROB"/>
               </Properties>
               <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="ROB_CBItemStateChanged"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ROB_CBActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="ROB_CB.setSelected(ConfigFile.getROB());"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JCheckBox" name="forwarding_CB">
               <Properties>
@@ -558,8 +562,12 @@
                 <Property name="toolTipText" type="java.lang.String" value="forwarding"/>
               </Properties>
               <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="forwarding_CBItemStateChanged"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="forwarding_CBActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="forwarding_CB.setSelected(ConfigFile.hasForwarding());"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="SchedulerName_JL">
               <Properties>
@@ -573,8 +581,12 @@
                 <Property name="toolTipText" type="java.lang.String" value="random file source code"/>
               </Properties>
               <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="RandomFile_CBItemStateChanged"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RandomFile_CBActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="RandomFile_CB.setSelected(ConfigFile.getRandomFile());"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="SourcePath_JL">
               <Properties>
@@ -585,7 +597,7 @@
             <Component class="javax.swing.JCheckBox" name="addressPredictor_CB">
               <Properties>
                 <Property name="text" type="java.lang.String" value="addressPredictor"/>
-                <Property name="toolTipText" type="java.lang.String" value="addressPredictor"/>
+                <Property name="toolTipText" type="java.lang.String" value="addressPredictor" postCode="addressPredictor_CB.setSelected(ConfigFile.isAddressPredictor());"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[102, 23]"/>
                 </Property>
@@ -597,6 +609,7 @@
                 </Property>
               </Properties>
               <Events>
+                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="addressPredictor_CBItemStateChanged"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addressPredictor_CBActionPerformed"/>
               </Events>
             </Component>
@@ -627,6 +640,7 @@
                 <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="tipusPrediccio_ComboBoxItemStateChanged"/>
               </Events>
               <AuxValues>
+                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="String[] types = {&quot;NONTAKEN&quot;,&quot;TAKEN&quot;,&quot;ONEBIT&quot;,&quot;TWOBIT&quot;};&#xa;tipusPrediccio_ComboBox.setSelectedIndex(Arrays.asList(types).indexOf(ConfigFile.getTipusPrediccio().toString()));"/>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
@@ -645,7 +659,7 @@
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="1">
-                    <StringItem index="0" value="enOrden"/>
+                    <StringItem index="0" value="order"/>
                   </StringArray>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value="name of scheduler"/>
@@ -654,6 +668,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SchedulerName_ComboBoxActionPerformed"/>
               </Events>
               <AuxValues>
+                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="String[] types_sc = {&quot;order&quot;};&#xa;System.out.println(&quot;DEBUG - schedName: &quot; + ConfigFile.getSchedulerName());&#xa;SchedulerName_ComboBox.setSelectedIndex(Arrays.asList(types_sc).indexOf(ConfigFile.getSchedulerName()));"/>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
@@ -765,13 +780,16 @@
             <Component class="javax.swing.JTextField" name="nRegisters_JTF">
               <Properties>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="ConfigFile.getnRegister()+&quot;&quot;" type="code"/>
+                  <Connection code="numregs+&quot;&quot;" type="code"/>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value="number of the general propose registers"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nRegisters_JTFActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="// Cojo el num de registros desde el fichero de registros&#xa;int numregs = -1;&#xa;try {&#xa;    numregs = new ConfigRegisters().getRegistersNumber();&#xa;} catch (IOException e) {&#xa;    e.printStackTrace();&#xa;}"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="fetchCycles_JL">
               <Properties>

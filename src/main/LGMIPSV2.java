@@ -24,16 +24,10 @@ public class LGMIPSV2 {
         ConfigFile conf = new ConfigFile(configPath);
         conf.loadConfig();
         ConfigFile.showConfig();
-        String option = ConfigFile.getRandomFile();
-        switch (option) {
-            case "y":               
-                break;
-            case "n":
+        boolean option = ConfigFile.getRandomFile();
+        if (!option) {
                 path = ConfigFile.getSourcePath();
                 //  System.out.println("PATH: " + path);
-                break;
-            default:
-                System.out.println("OPTION ERROR");
         }
         Architecture a = new Architecture(ConfigFile.getnBits(), path);
         a.simulateMIPS();

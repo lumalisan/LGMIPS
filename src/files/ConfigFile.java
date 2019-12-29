@@ -26,7 +26,7 @@ public class ConfigFile {
 
     /*Config params. to read*/
     private static String sourcePath;
-    private static String randomFile;
+    private static boolean randomFile;
     private static int nBits;
     private static int startAdress;
     private static int finishAdress;
@@ -48,7 +48,7 @@ public class ConfigFile {
     private static int latencyAdd;
     private static int latencyMult;
     private static int retirROB;
-    private static String ROB;
+    private static boolean ROB;
 
     // Añadido
     private static Pipeline.predictionType tipusPrediccio;
@@ -69,7 +69,6 @@ public class ConfigFile {
     public void loadConfig() throws IOException {
         prop.load(input);
         sourcePath = normalizeKey(prop.getProperty("sourcePath"));
-        randomFile = (normalizeKey(prop.getProperty("randomFile(y/n)")));
         nBits = Integer.parseInt(normalizeKey(prop.getProperty("nBits")));
         startAdress = Integer.parseInt(normalizeKey(prop.getProperty("startAdress")));
         finishAdress = Integer.parseInt(normalizeKey(prop.getProperty("finishAdress")));
@@ -89,9 +88,7 @@ public class ConfigFile {
         latencyGeneric = Integer.parseInt(normalizeKey(prop.getProperty("latencyGeneric")));
         latencyAdd = Integer.parseInt(normalizeKey(prop.getProperty("latencyAdd")));
         latencyMult = Integer.parseInt(normalizeKey(prop.getProperty("latencyMult")));
-        retirROB = Integer.parseInt(normalizeKey(prop.getProperty("retirementROB")));
-        ROB = normalizeKey(prop.getProperty("ROB(y/n)"));
-        
+        retirROB = Integer.parseInt(normalizeKey(prop.getProperty("retirementROB")));        
         nRegister = Integer.parseInt(normalizeKey(prop.getProperty("nRegister")));
 
         // Añadido
@@ -102,20 +99,34 @@ public class ConfigFile {
             tipusPrediccio = Pipeline.predictionType.NONTAKEN;
         }
         try {
-            addressPredictor = normalizeKey(prop.getProperty("addressPredictor(y/n)")).equals("y");
+            addressPredictor = normalizeKey(prop.getProperty("addressPredictor")).equals("y");
         } catch (Exception e) {
             System.out.println("**Error leyendo preferencia de predicción direcciones, estableciendo valor por defecto ACTIVA**");
             addressPredictor = true;
         }
         try {
-            forwarding = normalizeKey(prop.getProperty("forwarding(y/n)")).equals("y");
+            forwarding = normalizeKey(prop.getProperty("forwarding")).equals("y");
         } catch (Exception e) {
             System.out.println("**Error leyendo preferencia de forwarding, estableciendo valor por defecto ACTIVO**");
             forwarding = true;
         }
         
         try {
-            loopUnrolling = normalizeKey(prop.getProperty("loopUnrolling(y/n)")).equals("y");
+            randomFile = normalizeKey(prop.getProperty("randomFile")).equals("y");
+        } catch (Exception e) {
+            System.out.println("**Error leyendo preferencia de randomFile, estableciendo valor por defecto INACTIVO**");
+            randomFile = false;
+        }
+        
+        try {
+            ROB = normalizeKey(prop.getProperty("ROB")).equals("y");
+        } catch (Exception e) {
+            System.out.println("**Error leyendo preferencia de ROB, estableciendo valor por defecto INACTIVO**");
+            ROB = false;
+        }
+        
+        try {
+            loopUnrolling = normalizeKey(prop.getProperty("loopUnrolling")).equals("y");
         } catch (Exception e) {
             System.out.println("**Error leyendo preferencia de loop unrolling, estableciendo valor por defecto INACTIVO**");
             loopUnrolling = false;
@@ -172,13 +183,7 @@ public class ConfigFile {
     }
 
     public static boolean getROB() {
-        boolean rob = false;
-        if (ROB.equals("n")) {
-            rob = false;
-        } else if (ROB.equals("y")) {
-            rob = true;
-        }
-        return rob;
+        return ROB;
     }
 
     public static int getRetirROB() {
@@ -189,7 +194,7 @@ public class ConfigFile {
         return scalability;
     }
 
-    public static String getRandomFile() {
+    public static boolean getRandomFile() {
         return randomFile;
     }
 
@@ -304,8 +309,11 @@ public class ConfigFile {
         prop.setProperty("sourcePath", sourcePath+"");
     }
 
-    public void setRandomFile(String randomFile) {
-        prop.setProperty("randomFile", randomFile+"");
+    public void setRandomFile(boolean randomFile) {
+        if (randomFile)
+            prop.setProperty("randomFile", "y");
+        else
+            prop.setProperty("randomFile", "n");
     }
 
     public void setnBits(int nBits) {
@@ -392,8 +400,11 @@ public class ConfigFile {
         prop.setProperty("retirementROB", retirROB+"");
     }
 
-    public void setROB(String ROB) {
-        prop.setProperty("ROB", ROB+"");
+    public void setROB(boolean ROB) {
+        if (ROB)
+            prop.setProperty("ROB", "y");
+        else
+            prop.setProperty("ROB", "n");
     }
 
     public void setTipusPrediccio(Pipeline.predictionType tipusPrediccio) {
@@ -402,23 +413,25 @@ public class ConfigFile {
 
     public void setAddressPredictor(boolean addressPredictor) {
         if (addressPredictor)
-            prop.setProperty("addressPredictor", "true");
+            prop.setProperty("addressPredictor", "y");
         else
-            prop.setProperty("addressPredictor", "false");
+            prop.setProperty("addressPredictor", "n");
     }
 
     public void setForwarding(boolean forwarding) {
         if (forwarding)
-            prop.setProperty("forwarding", "true");
+            prop.setProperty("forwarding", "y");
         else
-            prop.setProperty("forwarding", "false");
+            prop.setProperty("forwarding", "n");
     }
 
     public void updateConfigFile() {
         
         try {
-            if (prop == null)
+            if (prop == null) {
                 loadConfig();
+                System.out.println("DEBUG - updateConfigFile(): prop is null!");
+            }
             out = new FileOutputStream(path);
             prop.store(out, path);
         } catch (IOException ex) {
