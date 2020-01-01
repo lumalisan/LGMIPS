@@ -9,6 +9,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.StringWriter;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ public class Informacio {
     int instMesLlarga;
     int nBranchs = 0;
     int nBranchsTaken = 0;
+    static String res[];
     
     public Informacio() {
         instMesLlarga = 0;
@@ -110,12 +112,12 @@ public class Informacio {
         }
         
         String filename = "out_" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("ddMMuu_HHmmss")) + ".txt";
-        System.out.println("DEBUG - Filename: " + filename);
+        System.out.println("Saving execution results in " + filename);
         
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(new File(filename)))) {
             bw.append("================== RESULTATS ==================");
             bw.append("\r\n");
-            bw.append("Branchs taken: "+nBranchsTaken+"\r\n");
+            bw.append("Branchs taken:  "+nBranchsTaken+"\r\n");
             bw.append("Branchs totals: "+nBranchs+"\r\n");
             bw.append("Percentatge de bots realitzats: "+botsRealitzats+"%\r\n"); // Añadido "%"
             bw.append("Cicles: "+cicle+"\r\n");
@@ -143,14 +145,32 @@ public class Informacio {
             System.out.print("\r\n");
             System.out.print("\r\n");
             
+            res = new String[resultat.length];
+            
+            for (int i=0; i<res.length; i++) {
+                res[i] = "";
+            }
+            
+            int index = 0;
             for (String[] resultat1 : resultat) {
                 for (String v : resultat1) {
                     bw.append(v == null ? "\t" : v);
                     System.out.print(v == null ? "\t" : v);
+                    if (v == null) {
+                        res[index] += "\t";
+                    } else {
+                        res[index] += v;
+                    }
                 }
                 bw.append("\r\n");
                 System.out.print("\r\n");
+                res[index] += "\r\n";
+                index++;
             }
         }
+    }
+    
+    public static String[] getRes() {
+        return res;
     }
 }

@@ -10,7 +10,6 @@ import files.ConfigFile;
 import files.ConfigRegisters;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.logging.Level;
@@ -831,129 +830,131 @@ public class mainGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void LatencyGeneric_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LatencyGeneric_JTFActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_LatencyGeneric_JTFActionPerformed
 
     private void nFUGeneric_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nFUGeneric_JTFActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_nFUGeneric_JTFActionPerformed
 
     private void scalable_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scalable_JTFActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_scalable_JTFActionPerformed
 
     private void writeCycles_JTF3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_writeCycles_JTF3ActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_writeCycles_JTF3ActionPerformed
 
     private void memoryCycles_JTF2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_memoryCycles_JTF2ActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_memoryCycles_JTF2ActionPerformed
 
     private void fetchCycles_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fetchCycles_JTFActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_fetchCycles_JTFActionPerformed
 
     private void nRegisters_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nRegisters_JTFActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_nRegisters_JTFActionPerformed
 
     private void finishAddress_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finishAddress_JTFActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_finishAddress_JTFActionPerformed
 
     private void startAddress_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startAddress_JTFActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_startAddress_JTFActionPerformed
 
     private void nBitsArchitecture_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nBitsArchitecture_JTFActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_nBitsArchitecture_JTFActionPerformed
 
     private void ExecuteCycles_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExecuteCycles_JTFActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_ExecuteCycles_JTFActionPerformed
 
     private void DecodeCycles_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DecodeCycles_JTFActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_DecodeCycles_JTFActionPerformed
 
     private void SchedulerName_ComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SchedulerName_ComboBoxActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_SchedulerName_ComboBoxActionPerformed
 
     private void CommitCycles_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CommitCycles_JTFActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_CommitCycles_JTFActionPerformed
 
     private void tipusPrediccio_ComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_tipusPrediccio_ComboBoxItemStateChanged
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_tipusPrediccio_ComboBoxItemStateChanged
 
     private void SourcePath_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SourcePath_JTFActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_SourcePath_JTFActionPerformed
 
     private void addressPredictor_CBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressPredictor_CBActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_addressPredictor_CBActionPerformed
 
     private void RandomFile_CBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RandomFile_CBActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_RandomFile_CBActionPerformed
 
     private void forwarding_CBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forwarding_CBActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_forwarding_CBActionPerformed
 
     private void ROB_CBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ROB_CBActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_ROB_CBActionPerformed
 
     private void retirementROB_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retirementROB_JTFActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_retirementROB_JTFActionPerformed
 
     private void sizeROB_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sizeROB_JTFActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_sizeROB_JTFActionPerformed
 
     private void latencyFUMult_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_latencyFUMult_JTFActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_latencyFUMult_JTFActionPerformed
 
     private void nFUMult_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nFUMult_JTFActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_nFUMult_JTFActionPerformed
 
     private void latencyAdd_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_latencyAdd_JTFActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_latencyAdd_JTFActionPerformed
 
     private void nFUAdd_JTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nFUAdd_JTFActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_nFUAdd_JTFActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        // "Execute"
         LGMIPSV2 lg = new LGMIPSV2();
         try {
             lg.init();
+            Results.main(null);
         } catch (IOException ex) {
             Logger.getLogger(mainGUI.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        int opcion = JOptionPane.showConfirmDialog(null, "Are you sure you want to exit the simulator? All unsaved changed will be lost.", "Exit Confirmation", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
-
+        // "Exit"
+        int opcion = JOptionPane.showConfirmDialog(null, "Are you sure you want to exit the simulator? All unsaved changed will be lost.", 
+                "Exit Confirmation", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
         if (opcion == JOptionPane.YES_OPTION) {
             System.exit(0);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        // "+" in Registers
         DefaultTableModel model = (DefaultTableModel) this.jTable1.getModel();
         model.addRow(new Object[]{"r" + model.getRowCount(), "0"});
         // Evidencia la última linea añadida
@@ -962,7 +963,7 @@ public class mainGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        // "-" in Registers
         DefaultTableModel model = (DefaultTableModel) this.jTable1.getModel();
         int selected = this.jTable1.getSelectedRow();
         if (selected != -1) {
@@ -971,7 +972,7 @@ public class mainGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void SaveClose_BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveClose_BTActionPerformed
-        // TODO add your handling code here:
+        // Settings save
         config.setSourcePath(SourcePath_JTF.getText());
         config.setnFUAdd(Integer.parseInt(nFUAdd_JTF.getText()));
         config.setLatencyAdd(Integer.parseInt(latencyAdd_JTF.getText()));
@@ -1025,10 +1026,11 @@ public class mainGUI extends javax.swing.JFrame {
             config.setTipusPrediccio(Pipeline.predictionType.TAKEN);
             System.out.println("DEBUG - GUI Error, no prediction type detected, setting default value TAKEN");
         }
-
+        
         config.setnRenameRegister(16);
 
         config.updateConfigFile();
+        System.out.println("Propiedades actualizadas");
     }//GEN-LAST:event_SaveClose_BTActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -1039,22 +1041,22 @@ public class mainGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void RandomFile_CBItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_RandomFile_CBItemStateChanged
-        boolean state = evt.getStateChange() == 1 ? true : false;
+        boolean state = evt.getStateChange() == 1;
         config.setRandomFile(state);
     }//GEN-LAST:event_RandomFile_CBItemStateChanged
 
     private void ROB_CBItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ROB_CBItemStateChanged
-        boolean state = evt.getStateChange() == 1 ? true : false;
+        boolean state = evt.getStateChange() == 1;
         config.setROB(state);
     }//GEN-LAST:event_ROB_CBItemStateChanged
 
     private void addressPredictor_CBItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_addressPredictor_CBItemStateChanged
-        boolean state = evt.getStateChange() == 1 ? true : false;
+        boolean state = evt.getStateChange() == 1;
         config.setAddressPredictor(state);
     }//GEN-LAST:event_addressPredictor_CBItemStateChanged
 
     private void forwarding_CBItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_forwarding_CBItemStateChanged
-        boolean state = evt.getStateChange() == 1 ? true : false;
+        boolean state = evt.getStateChange() == 1;
         config.setForwarding(state);
     }//GEN-LAST:event_forwarding_CBItemStateChanged
 

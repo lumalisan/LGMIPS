@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
+    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[320, 240]"/>
+    </Property>
+    <Property name="name" type="java.lang.String" value="Results" noResource="true"/>
+    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[700, 550]"/>
+    </Property>
+    <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[700, 550]"/>
+    </Property>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="jScrollPane1" alignment="0" pref="665" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="jScrollPane1" alignment="1" pref="527" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="jTextArea1">
+          <Properties>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="rows" type="int" value="5"/>
+            <Property name="alignmentX" type="float" value="0.0"/>
+            <Property name="alignmentY" type="float" value="0.0"/>
+            <Property name="bounds" type="java.awt.Rectangle" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection component="Form" name="getBounds" type="method"/>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="String[] res = architecture.Informacio.getRes();&#xa;jTextArea1.setEditable(false);&#xa;jTextArea1.setFont(new Font(&quot;monospaced&quot;, Font.PLAIN, 12));&#xa;jTextArea1.setTabSize(4);&#xa;&#xa;int cols = 0;&#xa;String totaltext = &quot;&quot;;&#xa;&#xa;for (int i=0; i&lt;res.length; i++) {&#xa;    totaltext += res[i];&#xa;    int len = res[i].length();&#xa;    if (len &gt; cols)&#xa;        cols = len;&#xa;}&#xa;&#xa;for (String s : res) {&#xa;    jTextArea1.append(s);&#xa;    jTextArea1.append(&quot;\n&quot;);&#xa;}&#xa;&#xa;totaltext = jTextArea1.getText();&#xa;&#xa;// Cuento las &apos;S&apos;&#xa;// Es ineficiente pero no puedo usar lambdas&#xa;int count = 0;&#xa;for (int i=0; i&lt;totaltext.length()-1; i++) {&#xa;    if (totaltext.charAt(i) == &apos;S&apos; &amp;&amp; totaltext.charAt(i+1) == &apos;\t&apos;) {&#xa;        count++;&#xa;    }&#xa;}&#xa;//System.out.println(&quot;DEBUG - count: &quot; + count);&#xa;&#xa;// Preparo el array de indices&#xa;int[] indexes = new int[count];&#xa;&#xa;// Calculo los indices de las &apos;S&apos;&#xa;int idx = 0;&#xa;for (int i=0; i&lt;totaltext.length()-1; i++) {&#xa;    if (totaltext.charAt(i) == &apos;S&apos; &amp;&amp; totaltext.charAt(i+1) == &apos;\t&apos;) {&#xa;        indexes[idx] = i;&#xa;        idx++;&#xa;    }&#xa;}&#xa;&#xa;/*&#xa;System.out.print(&quot;\nDEBUG - indexes: [&quot;);&#xa;for (int i=0; i&lt;indexes.length; i++) {&#xa;    if (i == indexes.length-1) {&#xa;        System.out.print(indexes[i] + &quot;]&quot;);&#xa;    }&#xa;    else {&#xa;    System.out.print(indexes[i] + &quot; &quot;);&#xa;    }&#xa;}&#xa;System.out.print(&quot;\n&quot;);&#xa;*/&#xa;try {&#xa;for (int i=0; i&lt;jTextArea1.getLineCount(); i++) {&#xa;    if (i % 4 == 0) {&#xa;        jTextArea1.getHighlighter().addHighlight(jTextArea1.getLineStartOffset(i), jTextArea1.getLineEndOffset(i), &#xa;            new DefaultHighlighter.DefaultHighlightPainter(new Color(0.96f, 0.96f, 0.96f)));&#xa;    } else if (i % 4 == 2) {&#xa;        jTextArea1.getHighlighter().addHighlight(jTextArea1.getLineStartOffset(i), jTextArea1.getLineEndOffset(i), &#xa;            new DefaultHighlighter.DefaultHighlightPainter(new Color(0.9f, 0.9f, 0.9f)));&#xa;}&#xa;}&#xa;&#xa;Highlight[] highlights = jTextArea1.getHighlighter().getHighlights();&#xa;&#xa;for (int i=0; i&lt;count; i++) {&#xa;    //System.out.println(&quot;DEBUG - Highlighting stall at index &quot; + indexes[i]);&#xa;    int index = getHighlightIndex(highlights, indexes[i]);&#xa;    if (index == -1) {&#xa;        jTextArea1.getHighlighter().addHighlight(indexes[i], indexes[i]+1, new DefaultHighlighter.DefaultHighlightPainter(Color.RED));&#xa;    } else {&#xa;        Thread.sleep(10);&#xa;        int startOff = highlights[index].getStartOffset();&#xa;        int endOff = highlights[index].getEndOffset();&#xa;        //System.out.println(&quot;DEBUG - Offsets: &quot; + startOff + &quot;, &quot; + endOff + &quot; | &quot; + indexes[i]);&#xa;        jTextArea1.getHighlighter().removeHighlight(highlights[index]);&#xa;        jTextArea1.getHighlighter().addHighlight(startOff, indexes[i], new DefaultHighlighter.DefaultHighlightPainter(new Color(0.9f, 0.9f, 0.9f)));&#xa;        jTextArea1.getHighlighter().addHighlight(indexes[i], indexes[i]+1, new DefaultHighlighter.DefaultHighlightPainter(Color.RED));&#xa;        jTextArea1.getHighlighter().addHighlight(indexes[i], endOff-1, new DefaultHighlighter.DefaultHighlightPainter(new Color(0.9f, 0.9f, 0.9f)));&#xa;    }&#xa;    &#xa;}&#xa;&#xa;} catch (Exception e) {&#xa;    e.printStackTrace();&#xa;}&#xa;&#xa;jTextArea1.setCaretPosition(jTextArea1.getDocument().getDefaultRootElement().getElement(3).getStartOffset());"/>
+          </AuxValues>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>

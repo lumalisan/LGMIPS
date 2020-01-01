@@ -72,7 +72,7 @@ public class Dependence {
     }
 
     public static void createFile() throws IOException {
-        fstream = new FileWriter("dependences.rft");
+        fstream = new FileWriter("dependences.rtf");
         out = new BufferedWriter(fstream);
     }
 
