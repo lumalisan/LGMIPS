@@ -89,9 +89,9 @@ public class Instruction implements MIPS {
         speculate.add(instIndex);
     }
 
-    public boolean containsInsSpec(int idBrach) {
+    public boolean containsInsSpec(int idBranch) {
         boolean yes = false;
-        if (speculate.contains(idBrach - 1)) { //si contiene el indice del  la ins culpable
+        if (speculate.contains(idBranch - 1)) { //si contiene el indice del  la ins culpable
             yes = true;
         }
         return yes;
@@ -242,7 +242,7 @@ public class Instruction implements MIPS {
                 operandOK = true;
             } else {
                 if (isJump) {
-                    if (Architecture.checkBrachPoint(operandsList1)) {
+                    if (Architecture.checkBranchPoint(operandsList1)) {
                         operandOK = true;
                     } else {
                         error++;

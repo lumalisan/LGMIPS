@@ -34,6 +34,6 @@ public class LGMIPSV2 {
     }
 
     public static void main(String[] args) throws FileNotFoundException, IOException {
-        NewJFrame.main(null);
+        mainGUI.main(null);
     }
 }

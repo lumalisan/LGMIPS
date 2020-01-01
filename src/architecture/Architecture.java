@@ -91,12 +91,12 @@ public final class Architecture implements MIPS {
     }
 
     /*Method that check if a brach point was declarated before in the source code*/
-    public static boolean checkBrachPoint(String brachPoint) {
-        return BRANCHPOINTS.containsKey(brachPoint);
+    public static boolean checkBranchPoint(String branchPoint) {
+        return BRANCHPOINTS.containsKey(branchPoint);
     }
 
     /*Method that add the branch points to its structure*/
-    public static void addBrachPoint(String label, int idIns) {
+    public static void addBranchPoint(String label, int idIns) {
         BRANCHPOINTS.put(label, idIns);
     }
 
