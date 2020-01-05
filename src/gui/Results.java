@@ -7,8 +7,11 @@ package gui;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.DefaultHighlighter;
 import javax.swing.text.Highlighter.Highlight;
@@ -25,7 +28,17 @@ public class Results extends javax.swing.JFrame {
     public Results() {
         initComponents();
         this.setLocationRelativeTo(null);
+        
+        this.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                    System.exit(0);
+            }
+        });
+        
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
